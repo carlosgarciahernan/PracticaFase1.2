@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Free CSS template by ChocoTemplates.com</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+</head>
+<body>
+	<!-- Header -->
+	<div id="header">
+		<div class="shell">
+			<!-- Logo -->
+			<h1 id="logo" class="notext"><a href="index.html">LIGA URJC</a></h1>
+			<!-- End Logo -->
+		</div>
+	</div>
+	<!-- End Header -->
+	
+	<!-- Navigation -->
+	<div id="navigation">
+		<div class="shell">
+			<div class="cl">&nbsp;</div>
+			<ul>
+			    <li><a href="ligas.html">ligas</a></li>
+			    <li><a href="clubs.html">clubs</a></li>
+			    <li><a href="jugadores.html">jugadores</a></li>
+			    <li><a href="noticias.html">noticias</a></li>
+			    <li><a href="contacto.html">contacto</a></li>
+			</ul>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Navigation -->
+	
+	<!-- Heading -->
+	<div id="heading">
+		<div class="shell">
+			<div id="heading-cnt">
+				
+				<!-- Sub nav -->
+				<div id="side-nav">
+					<ul>
+					    <li class="active"><div class="link"><a href="index.html">inicio</a></div></li>
+					    <li><div class="link"><a href="edicion_jugador.html">Consultar jugadores</a></div></li>
+					    <li><div class="link"><a href="edicion_clubs.html">Consultar clubs</a></div></li>
+					    <li><div class="link"><a href="edicion_ligas.html">Consultar ligas</a></div></li>
+					</ul>
+				</div>
+				<!-- End Sub nav -->
+				
+				<!-- Widget -->
+				<div id="heading-box">
+					<div id="heading-box-cnt">
+						<div class="cl">&nbsp;</div>
+						
+						<!-- Main Slide Item -->
+						<div class="featured-main">
+							<a href="noticia_especifica?id={{#noticiaUna}}{{id}}{{/noticiaUna}}"><img src="images/noticia{{#noticiaUna}}{{id}}{{/noticiaUna}}.jpg" alt="" /></a>
+							<div class="featured-main-details">
+								<div class="featured-main-details-cnt">									
+									<h4><a href="noticia_especifica?id={{#noticiaUna}}{{id}}{{/noticiaUna}}">{{#noticiaUna}}{{titulo}}{{/noticiaUna}}</a></h4>
+									<p>{{#noticiaUna}}{{resumen}}{{/noticiaUna}}</p>
+								</div>
+							</div>
+						</div>
+						<!-- End Main Slide Item -->
+						
+						<div class="featured-side">
+							
+							<!-- Slide Item 1 -->
+							<div class="featured-side-item">
+								<div class="cl">&nbsp;</div>
+								<a href="noticia_especifica?id={{#noticia2}}{{id}}{{/noticia2}}" class="left"><img src="images/noticia{{#noticia2}}{{id}}{{/noticia2}}" alt="" /></a>
+								<h4><a href="noticia_especifica?id={{#noticia2}}{{id}}{{/noticia2}}">{{#noticia2}}{{titulo}}{{/noticia2}}</a></h4>
+								<p>{{#noticia2}}{{resumen}}{{/noticia2}}</p>
+								<div class="cl">&nbsp;</div>
+							</div>
+							<!-- End Slide Item 1 -->
+							
+							<!-- Slide Item 2 -->
+							<div class="featured-side-item">
+								<div class="cl">&nbsp;</div>
+								<a href="noticia_especifica?id={{#noticia3}}{{id}}{{/noticia3}}" class="left"><img src="images/noticia{{#noticia3}}{{id}}{{/noticia3}}" alt="" /></a>
+								<h4><a href="noticia_especifica?id={{#noticia3}}{{id}}{{/noticia3}}">{{#noticia3}}{{titulo}}{{/noticia3}}</a></h4>
+								<p>{{#noticia3}}{{resumen}}{{/noticia3}}</p>
+								<div class="cl">&nbsp;</div>
+							</div>
+							<!-- End Slide Item 2 -->
+							
+							<!-- Slide Item 3 -->
+							<div class="featured-side-item">
+								<div class="cl">&nbsp;</div>
+								<a href="noticia_especifica?id={{#noticia4}}{{id}}{{/noticia4}}" class="left"><img src="images/noticia{{#noticia4}}{{id}}{{/noticia4}}" alt="" /></a>
+								<h4><a href="noticia_especifica?id={{#noticia4}}{{id}}{{/noticia4}}">{{#noticia4}}{{titulo}}{{/noticia4}}</a></h4>
+								<p>{{#noticia4}}{{resumen}}{{/noticia4}}</p>
+								<div class="cl">&nbsp;</div>
+							</div>
+							<!-- End Slide Item 3 -->
+							
+							<!-- Slide Item 4 -->
+							<div class="featured-side-item">
+								<div class="cl">&nbsp;</div>
+								<a href="noticia_especifica?id={{#noticia5}}{{id}}{{/noticia5}}" class="left"><img src="images/noticia{{#noticia5}}{{id}}{{/noticia5}}" alt="" /></a>
+								<h4><a href="noticia_especifica?id={{#noticia5}}{{id}}{{/noticia5}}">{{#noticia5}}{{titulo}}{{/noticia5}}</a></h4>
+								<p>{{#noticia5}}{{resumen}}{{/noticia5}}</p>
+								<div class="cl">&nbsp;</div>
+							</div>
+							<!-- End Slide Item 4 -->
+						</div>
+						<div class="cl">&nbsp;</div>						
+					</div>
+				</div>
+				<!-- End Widget -->
+				
+			</div>			
+		</div>
+	</div>
+	<!-- End Heading -->
+	
+	<!-- Main -->
+	<div id="main">
+		<div class="shell">		
+			<div class="cl">&nbsp;</div>	
+			<div id="sidebar">
+				<h2>ULTIMOS PARTIDOS</h2>
+				<ul>
+				    {{#partidos}}
+				    <li><h3><a href="partido_especifico?id={{id}}">{{equipo_escrito}}  {{resultado}}</a></h3></br>
+				    </li>
+				    {{/partidos}}
+				</ul>
+				<a href="#" class="archives">News Archives</a>
+			</div>
+			<div id="content">
+				<div class="cl">&nbsp;</div>
+				
+				<div class="cl">&nbsp;</div>
+				<div class="video-box">
+					<div class="cl">&nbsp;</div>
+					<h2 class="left">Agregar elementos a nuestra plataforma</h2>
+					<div class="cl">&nbsp;</div>
+					<div class="video-item-box">
+						<a href="edicion_clubs.html" class="left"><img src="css/images/video-1.jpg" alt="" /></a>
+						<p>Agrega un club a nuestra BBDD para tener disponible su información</p>
+						<a href="edicion_clubs.html" class="watch-now">Prueba ahora</a>
+					</div>
+					<div class="video-item-box second">
+						<a href="edicion_ligas.html" class="left"><img src="css/images/video-2.jpg" alt="" /></a>
+						<p>Crea una liga o torneo y lleva el control de los clubs que participan y cuando lo harán</p>
+						<a href="edicion_ligas.html" class="watch-now">Prueba ahora</a>
+					</div>
+					<div class="video-item-box">
+						<a href="edicion_partidos.html" class="left"><img src="css/images/video-3.jpg" alt="" /></a>
+						<p>Crea un partido y registra resultados, sanciones y otros detalles</p>
+						<a href="edicion_partidos.html" class="watch-now">Prueba ahora</a>
+					</div>
+					<div class="video-item-box second">
+						<a href="edicion_jugador.html" class="left"><img src="css/images/video-4.jpg" alt="" /></a>
+						<p>Ingresa a un jugador y lleva el control del club en el que se encuentra</p>
+						<a href="edicion_jugador.html" class="watch-now">Prueba ahora</a>
+					</div>
+					<div class="cl">&nbsp;</div>
+				</div>
+			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Main -->
+	
+	<!-- Footer -->
+	<div id="footer">
+		<div class="shell">
+			<div class="cl">&nbsp;</div>
+			<a href="#" class="left">TERMS OF USE</a>
+			<a href="#" class="left">PRIVACY POLICY</a>
+			<p class="right">&copy; Sitename.com. Design by <a href="http://chocotemplates.com">ChocoTemplates.com</a></p>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Footer -->
+</body>
+</html>
