@@ -28,6 +28,35 @@ public class Jugador {
 	@OneToOne
     private Club clubActual;
 	
+	private double altura;
+	private double peso;
+	private int dorsal;
+	private int goles;
+	private int partidos_jugados;
+
+	
+	public Jugador() {
+		
+	}
+	
+	public Jugador(String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,Club clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados) {
+
+		this.nombre=nombre;
+		this.primerApellido=primerApellido;
+		this.segundoApellido=segundoApellido;
+		this.genero=genero;
+		this.edad=edad;
+		this.provincia=provincia;
+		this.ciudad=ciudad;
+		this.clubActual=clubActual;
+		this.altura=altura;
+		this.peso=peso;
+		this.dorsal=dorsal;
+		this.goles=goles;
+		this.partidos_jugados=partidos_jugados;
+		
+	}
+	
 	public List<Sancion> getSanciones() {
 		return sanciones;
 	}
@@ -81,34 +110,7 @@ public class Jugador {
 	}
 
 	
-	private double altura;
-	private double peso;
-	private int dorsal;
-	private int goles;
-	private int partidos_jugados;
-
 	
-	public Jugador() {
-		
-	}
-	
-	public Jugador(String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,Club clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados) {
-
-		this.nombre=nombre;
-		this.primerApellido=primerApellido;
-		this.segundoApellido=segundoApellido;
-		this.genero=genero;
-		this.edad=edad;
-		this.provincia=provincia;
-		this.ciudad=ciudad;
-		this.clubActual=clubActual;
-		this.altura=altura;
-		this.peso=peso;
-		this.dorsal=dorsal;
-		this.goles=goles;
-		this.partidos_jugados=partidos_jugados;
-		
-	}
 
 	public long getId() {
 		return id;

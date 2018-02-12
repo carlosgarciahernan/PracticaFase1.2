@@ -45,11 +45,11 @@
 				<div class="cl">&nbsp;</div>
 				<div class="video-box">
 					
-					<h2>{{#partido}}{{equipo1}}  {{resultado}}  {{equipo2}}{{/partido}}</h2></br>
+					<h2>{{#partido}}{{equipo_escrito}}  {{resultado}}{{/partido}}</h2></br>
 					<h3>{{#partido}}{{fecha}}{{/partido}}</h3>
 					<p>Identificador:   </p>{{#sancion}}{{id}}{{/sancion}}</br>
     	 		 	<p>Detalles:   </p>{{#sancion}}{{detalles}}{{/sancion}}</br>
-    	 		 	<p>Responsable:   </p>{{#jugador}}{{nombre}} {{primerApellido}} {{segundoApellido}}{{/jugador}}</br>
+    	 		 	<p>Responsable:   </p>{{#jugador}}<a href="jugador_especifico?id={{id}}">{{nombre}} {{primerApellido}} {{segundoApellido}}</a>{{/jugador}}</br>
 					<div class="cl">&nbsp;</div>
 				</div>
 			</div>

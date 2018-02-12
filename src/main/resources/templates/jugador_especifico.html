@@ -46,13 +46,13 @@
 				<div class="video-box">
 					
 					<h2>{{#club}}{{nombre}} {{primerApellido}} {{segundoApellido}}{{/club}}</h2></br>
-					<img src="css/images/fotoJugador{{#liga}}{{nombre}}{{/liga}}.jpg" alt="" />
+					<img src="css/images/fotoJugador{{#club}}{{nombre}}{{/club}}.jpg" alt="" width="100px" height="100px"/>
 					<p>Identificador:   </p>{{#club}}{{id}}{{/club}}</br>
     	 		 	<p>Genero:   </p>{{#club}}{{genero}}{{/club}}</br>
     	 		 	<p>Edad:   </p>{{#club}}{{edad}}{{/club}}</br>
     	 		 	<p>Provincia:   </p>{{#club}}{{provincia}}{{/club}}</br>
     	 		 	<p>Ciudad:   </p>{{#club}}{{ciudad}}{{/club}}</br>
-    	 		 	<p>Club actual:   </p>{{#club}}{{clubActual}}{{/club}}</br>
+    	 		 	<p>Club actual:   </p>{{#c_actual}}<a href="club_especifico?id={{id}}">{{nombre}}</a>{{/c_actual}}</br>
     	 		 	<p>Lista sanciones:   </p>{{#sanciones}}<a href="sancion_especifica?id={{id}}"> Sancion {{id}}</a>{{/sanciones}}</br>
 					<div class="cl">&nbsp;</div>
 				</div>

@@ -34,6 +34,7 @@ public class ControladorBaseDeDatos{
 	@Autowired
 	private SancionRepositorio repositorio_de_sanciones;
 
+	//Lista los clubs que se llaman como la palabre introducida en el formulatio. Si el formulario está vacio se listan todos los clubs
 	@RequestMapping("url_accionar_listado_clubs")
 	public String listar_clubs(Model modelo,String nombre_club) {
 		List<Club> lista = new ArrayList<Club>();
@@ -44,6 +45,7 @@ public class ControladorBaseDeDatos{
 		return "listado_clubs";
 	}
 	
+
 	@RequestMapping("url_accionar_creacion_club")
 	public String crear_club(Model modelo, String nombre_club,String abreviatura,String fecha_creacion) {
 		List<Club> lista = repositorio_de_clubs.findAll();
@@ -55,8 +57,7 @@ public class ControladorBaseDeDatos{
 			}
 		}
 		if(repetido) {
-			//List<Jugador> li = club_repetido.getJugadores();
-			//li.add(repositorio_de_jugadores.getOne(id));			
+					
 		}else {
 			Club c = new Club(nombre_club,abreviatura,fecha_creacion);
 			repositorio_de_clubs.save(c);
@@ -169,8 +170,11 @@ public class ControladorBaseDeDatos{
 	public String ingresar_clubs_a_liga(Model modelo,@RequestParam long id,@RequestParam long id_club) {
 		Liga liga = repositorio_de_ligas.getOne(id);
 		Club club = repositorio_de_clubs.getOne(id_club);
-		modelo.addAttribute("liga",liga);
 		liga.getListado_de_clubs().add(club);
+		modelo.addAttribute("liga",liga);
+		modelo.addAttribute("clubs",liga.getListado_de_clubs());
+		repositorio_de_ligas.flush();
+		repositorio_de_clubs.flush();
 		return "liga_especifica";
 	}
 	
@@ -180,6 +184,9 @@ public class ControladorBaseDeDatos{
 		Club club = repositorio_de_clubs.getOne(id_club);
 		modelo.addAttribute("liga",torneo);
 		torneo.getListado_de_clubs().add(club);
+		modelo.addAttribute("clubs",torneo.getListado_de_clubs());
+		repositorio_de_ligas.flush();
+		repositorio_de_clubs.flush();
 		return "torneo_especifico";
 	}
 	

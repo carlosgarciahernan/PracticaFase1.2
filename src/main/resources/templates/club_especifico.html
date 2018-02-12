@@ -46,10 +46,10 @@
 				<div class="video-box">
 					
 					<h2>{{#club}}{{nombre}}{{/club}}</h2></br>
-					<img src="css/images/escudoClub{{#liga}}{{nombre}}{{/liga}}.jpg" alt="" />
+					<img src="css/images/escudoClub{{#club}}{{nombre}}{{/club}}.jpg" alt="" width="100px"; height="100px"/>
 					<p>Identificador:   </p>{{#club}}{{id}}{{/club}}</br>
     	 		 	<p>Fecha fundación:   </p>{{#club}}{{fecha_creacion}}{{/club}}</br>
-    	 		 	<p>Jugadores:   </p>{{#club}}{{jugadores_escrito}}{{/club}}</br>
+    	 		 	<p>Jugadores:   </p>{{#lista}}<a href="jugador_especifico?id={{id}}">{{nombre}}</a>, {{/lista}}</br>
 					<div class="cl">&nbsp;</div>
 				</div>
 			</div>

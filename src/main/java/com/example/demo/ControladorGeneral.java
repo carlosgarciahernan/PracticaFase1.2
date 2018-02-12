@@ -106,7 +106,9 @@ public class ControladorGeneral {
 	@RequestMapping("/club_especifico")
 	public String acceso_pagina_especifica_club(Model modelo, @RequestParam long id) {
 		Club club = repositorio_de_clubs.getOne(id);
+		List<Jugador> lista = club.getJugadores();
 		modelo.addAttribute("club",club);
+		modelo.addAttribute("lista",lista);
 		return "club_especifico";
 	}
 	
@@ -114,6 +116,7 @@ public class ControladorGeneral {
 	public String acceso_pagina_especifica_jugador(Model modelo, @RequestParam long id) {
 		Jugador club = repositorio_de_jugadores.getOne(id);
 		modelo.addAttribute("club",club);
+		modelo.addAttribute("c_actual",club.getClubActual());
 		modelo.addAttribute("sanciones",club.getSanciones());
 		return "jugador_especifico";
 	}
@@ -167,6 +170,7 @@ public class ControladorGeneral {
 	public String acceso_pagina_especifica_liga(Model modelo, @RequestParam long id) {
 		Liga liga = repositorio_de_ligas.getOne(id);
 		modelo.addAttribute("liga",liga);
+		modelo.addAttribute("clubs",liga.getListado_de_clubs());
 		return "liga_especifica";
 	}
 	
@@ -181,12 +185,13 @@ public class ControladorGeneral {
 	public String acceso_pagina_especifico_torneo(Model modelo, @RequestParam long id) {
 		Torneo liga = repositorio_de_torneos.getOne(id);
 		modelo.addAttribute("liga",liga);
-		return "liga_especifica";
+		modelo.addAttribute("clubs",liga.getListado_de_clubs());
+		return "torneo_especifico";
 	}
 	
 	@RequestMapping("/listado_jugadores")
 	public String acceso_listado_jugadores(Model modelo) {
-		List<Noticia> lista = repositorio_de_noticias.findAll();
+		List<Jugador> lista = repositorio_de_jugadores.findAll();
 		modelo.addAttribute("lista",lista);
 		return "listado_jugadores";
 	}

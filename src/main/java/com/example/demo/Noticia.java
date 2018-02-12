@@ -14,6 +14,11 @@ public class Noticia {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	private String titulo;
+	private String resumen;
+	private String cuerpoNoticia;
+	private String autor;
+	
 	public String getResumen() {
 		return resumen;
 	}
@@ -29,10 +34,7 @@ public class Noticia {
 	public void setCuerpoNoticia(String cuerpoNoticia) {
 		this.cuerpoNoticia = cuerpoNoticia;
 	}
-	private String titulo;
-	private String resumen;
-	private String cuerpoNoticia;
-	private String autor;
+	
 	public String getAutor() {
 		return autor;
 	}

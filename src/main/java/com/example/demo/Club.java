@@ -11,27 +11,50 @@ import javax.persistence.OneToMany;
 @Entity
 public class Club {
 
+	//Clave primaria
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	//Nombre del club
 	private String nombre;
 	
+	//String con todos los nombres y apellidos de los jugadores que pertenecen al club. Se genera cuando se llama a su get
+	private String jugadores_escrito;
+	
+	//Fecha de creación del club
+	private String fecha_creacion;
+	
+	//Abreviatura del club
+	private String abreviatura;
+	
+	//Lista de jugadores del club
 	@OneToMany
 	private List<Jugador> jugadores;
+	
+	
+	public Club() {
+		
+	}
+	
+	
+	public Club(String nombre,String abreviatura,String fecha_creacion) {
+		this.nombre=nombre;
+		jugadores = new ArrayList<Jugador>();
+		this.abreviatura=abreviatura;
+		this.fecha_creacion=fecha_creacion;
+	}
+	
 	
 	public String getFecha_creacion() {
 		return fecha_creacion;
 	}
 
+	
 	public void setFecha_creacion(String fecha_creacion) {
 		this.fecha_creacion = fecha_creacion;
 	}
 
-	private String jugadores_escrito;
-	private String fecha_creacion;
-	
-	
 	public String getJugadores_escrito() {
 		String resultado="";
 		for(Jugador j: jugadores) {
@@ -40,56 +63,50 @@ public class Club {
 		return resultado;
 	}
 
+	
 	public void setJugadores_escrito(String jugadores_escrito) {
 		this.jugadores_escrito = jugadores_escrito;
 	}
 
-	//private Presidente presidente;
-	private String abreviatura;
-	//private List<Liga> participa_liga;
-	//private List<Torneo> participa_torneo;
-	
-	
-	public Club() {
-		
-	}
 	
 	public List<Jugador> getJugadores() {
 		return jugadores;
 	}
 
+	
 	public void setJugadores(List<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
 
+	
 	public long getId() {
 		return id;
 	}
 
+	
 	public void setId(long id) {
 		this.id = id;
 	}
 
+	
 	public String getNombre() {
 		return nombre;
 	}
 
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+	
 	public String getAbreviatura() {
 		return abreviatura;
 	}
 
+	
 	public void setAbreviatura(String abreviatura) {
 		this.abreviatura = abreviatura;
 	}
 
-	public Club(String nombre,String abreviatura,String fecha_creacion) {
-		this.nombre=nombre;
-		jugadores = new ArrayList<Jugador>();
-		this.abreviatura=abreviatura;
-		this.fecha_creacion=fecha_creacion;
-	}
+	
 }
