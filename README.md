@@ -50,3 +50,5 @@ Esta aplicación consiste en la gestión general de un equipo de fútbol en una 
   
 # Diagrama entidad/relacion
 
+<img src="/carlosgarciahernan/PracticaFase1.2/blob/master/imagenesREADME/1-INICIO.jpg?raw=true"></img>
+
