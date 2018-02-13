@@ -44,7 +44,7 @@ public class ControladorBaseDeDatos{
 		modelo.addAttribute("lista",lista);
 		return "listado_clubs";
 	}
-	
+	//dwjdh
 
 	@RequestMapping("url_accionar_creacion_club")
 	public String crear_club(Model modelo, String nombre_club,String abreviatura,String fecha_creacion) {
