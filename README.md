@@ -10,15 +10,15 @@ David Beltran Sanchez
 Esta aplicación consiste en la gestión general de un equipo de fútbol en una liga. Donde podremos crear un equipo, sus jugadores, una liga, torneos externos a la liga(Champions League, Copa del Rey, etc.).
 
  **Parte Publica:** 
-  -	Mostrar características de ligas y torneos (nº de equipos, descensos y ascensos, sorteos de emparejamientos, reglas).
-  -	Consultar Encuentros y clasificación de una liga o torneo.
+  -	Mostrar características de ligas y torneos (nº de equipos, organizacion,clubs participantes).
+  -	Consultar Encuentros de una liga o torneo.
   -	Se podrá consultar los equipos de una liga, así como la información en un equipo en concreto.
   -	Detalles de un club (Nombre del club, fecha de creación, nº de jugadores).
   -	Datos de los jugadores de un equipo (Nombre, Edad, Altura, Peso, Dorsal, Goles, Partidos jugados, Sanciones)
 
 **Parte Privada:**
-  -	Un usuario podrá crear un equipo, una liga o torneo, el usuario también podrá unirse a una liga o torneo ya creada, así como darse de baja de uno mismo 
-  -	Cada jugador podrá darse de alta/baja en un club.
+  -	Un usuario podrá crear un equipo, una liga o torneo, un club también podrá unirse a una liga o torneo ya creada, así como darse de baja de uno mismo 
+  -	Cada jugador podrá darse de alta en un club.
   -	Se creará una lista de sanciones donde aparecen sanciones a un club y sanciones de jugadores.
   -	Existirá un usuario administrador que se encargara de gestionar las ligas o torneos (crear ligas o torneos, modificar detalles de un club o jugador, cambiar horario de encuentro).
   
