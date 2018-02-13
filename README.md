@@ -48,7 +48,32 @@ Esta aplicación consiste en la gestión general de un equipo de fútbol en una 
   
   
   
-# Diagrama entidad/relacion
+# DIAGRAMAS DE CAPTURAS
 
 <img src="imagenesREADME/1-INICIO.jpg?raw=true"></img>
+<img src="imagenesREADME/2-LIGAS.jpg?raw=true"></img>
+<img src="imagenesREADME/3-LISTAR LIGAS.jpg?raw=true"></img>
+<img src="imagenesREADME/4-LISTAR TORNEOS.jpg?raw=true"></img>
+<img src="imagenesREADME/5-CREAR LIGAS Y TORNEOS.jpg?raw=true"></img>
+<img src="imagenesREADME/6-CLUBS.jpg?raw=true"></img>
+<img src="imagenesREADME/7-LISTAR CLUBS.jpg?raw=true"></img>
+<img src="imagenesREADME/8-CONTACTAR CON CLUB.jpg?raw=true"></img>
+<img src="imagenesREADME/9-CREAR CLUBS.jpg?raw=true"></img>
+<img src="imagenesREADME/10-JUGADORES.jpg?raw=true"></img>
+<img src="imagenesREADME/11-LISTAR JUGADOR.jpg?raw=true"></img>
+<img src="imagenesREADME/12-CONTACTAR.jpg?raw=true"></img>
+<img src="imagenesREADME/13-CREAR JUGADOR.jpg?raw=true"></img>
+<img src="imagenesREADME/14-NOTICIAS.jpg?raw=true"></img>
+<img src="imagenesREADME/15-CREAR NOTICIA.jpg?raw=true"></img>
 
+# DIAGRAMA ENTIDAD-RELACION
+
+<img src="imagenesREADME/Diagrama Entidad-Relacion.jpg?raw=true"></img>
+
+# DIAGRAMA DE CONEXION
+
+<img src="imagenesREADME/Diagrama de conexion.jpg?raw=true"></img>
+
+# UML
+
+<img src="imagenesREADME/UML.jpg?raw=true"></img>
