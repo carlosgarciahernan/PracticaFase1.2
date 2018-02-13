@@ -68,7 +68,7 @@ Esta aplicación consiste en la gestión general de un equipo de fútbol en una 
 
 # DIAGRAMA ENTIDAD-RELACION
 
-<img src="imagenesREADME/Diagrama Entidad-Relacion.jpg?raw=true"></img>
+<img src="imagenesREADME/Diagrama+Entidad-Relacion.jpg?raw=true"></img>
 
 # DIAGRAMA DE CONEXION
 
