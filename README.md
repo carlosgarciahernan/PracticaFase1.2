@@ -1,3 +1,5 @@
+
+
 # LigaURJC
 
 #Equipo
@@ -43,3 +45,8 @@ Esta aplicación consiste en la gestión general de un equipo de fútbol en una 
   -JUGADOR: contendrá todos sus datos (Nombre, Edad, Altura, Peso, etc.)
   
   -PARTIDO: lugar de encuentro, horario del encuentro, clubs enfrentados, resultado, su liga o torneo
+  
+  
+  
+# Diagrama entidad/relacion
+
