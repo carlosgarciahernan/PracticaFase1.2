@@ -61,14 +61,14 @@ Esta aplicación consiste en la gestión general de un equipo de fútbol en una 
 <img src="imagenesREADME/9-CREAR CLUBS.jpg?raw=true"></img>
 <img src="imagenesREADME/10-JUGADORES.jpg?raw=true"></img>
 <img src="imagenesREADME/11-LISTAR JUGADOR.jpg?raw=true"></img>
-<img src="imagenesREADME/12-CONTACTAR.jpg?raw=true"></img>
+<img src="imagenesREADME/12-CONTACTAR JUGADOR.jpg?raw=true"></img>
 <img src="imagenesREADME/13-CREAR JUGADOR.jpg?raw=true"></img>
 <img src="imagenesREADME/14-NOTICIAS.jpg?raw=true"></img>
 <img src="imagenesREADME/15-CREAR NOTICIA.jpg?raw=true"></img>
 
 # DIAGRAMA ENTIDAD-RELACION
 
-<img src="imagenesREADME/Diagrama+Entidad-Relacion.jpg?raw=true"></img>
+<img src="imagenesREADME/Diagrama Entidad -Relacion.jpg?raw=true"></img>
 
 # DIAGRAMA DE CONEXION
 
