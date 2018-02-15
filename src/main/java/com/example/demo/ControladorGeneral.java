@@ -52,4 +52,19 @@ public class ControladorGeneral {
 	public String acceso_contacto(Model modelo) {
 		return "contacto";
 	}
+	
+	@RequestMapping("/login")
+	public String acceso_login(Model modelo) {
+		return "login";
+	}
+	
+	@RequestMapping("/home")
+	public String acceso_home(Model modelo) {
+		return "home";
+	}
+	
+	@RequestMapping("/loginerror")
+	public String acceso_loginerror(Model modelo) {
+		return "loginerror";
+	}
 }
