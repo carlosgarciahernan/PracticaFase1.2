@@ -63,5 +63,8 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter{
 		
 		//User
 		auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+		
+		//Admin
+		auth.inMemoryAuthentication().withUser("admin").password("password").roles("USER","ADMIN");
 	}
 }
