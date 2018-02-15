@@ -34,23 +34,27 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/login.html").permitAll();
 		http.authorizeRequests().antMatchers("/loginerror.html").permitAll();
 		http.authorizeRequests().antMatchers("/logout.html").permitAll();
+		http.authorizeRequests().antMatchers("/url_accionar_listado_clubs").permitAll();
+		http.authorizeRequests().antMatchers("/url_accionar_listado_jugadores").permitAll();
+		http.authorizeRequests().antMatchers("/url_accionar_listado_ligas").permitAll();
+		http.authorizeRequests().antMatchers("/url_accionar_listado_noticias").permitAll();
+		http.authorizeRequests().antMatchers("/url_accionar_listado_torneos").permitAll();
 		
 		//Paginas privadas
 		http.authorizeRequests().anyRequest().authenticated();
 		
 		//Login form
-		http.formLogin().loginPage("/login");
+		http.formLogin().loginPage("/login.html");
 		http.formLogin().usernameParameter("username");
 		http.formLogin().passwordParameter("password");
 		http.formLogin().defaultSuccessUrl("/home");
-		http.formLogin().failureUrl("/loginerror");
+		http.formLogin().failureUrl("/loginerror.html");
 		
 		//Logout
-		http.logout().logoutUrl("/logout");
-		http.logout().logoutSuccessUrl("/index");
+		http.logout().logoutUrl("/logout.html");
+		http.logout().logoutSuccessUrl("/index.html");
 		
-		//Disable CSRF at the moment
-		http.csrf().disable();
+		
 	}
 	
 	
