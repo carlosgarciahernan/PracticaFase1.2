@@ -44,6 +44,23 @@
 			<div id="content">
 				<div class="cl">&nbsp;</div>
 				<div class="video-box">
+				<h2>Bienvenido {{#usuario}}{{nombre}}{{/usuario}}</h2></br></br>
+				<table>
+				<tr>
+					<th>Mis clubs creados</th>
+					<th>Mis ligas creadas</th>
+					<th>Mis torneos creados</th>
+					<th>Mis jugadores creados</th>
+					<th>Mis noticias creadas</th>
+				</tr>
+				<tr>
+					<td>{{#lista_clubs}} {{nombre}} </br>{{/lista_clubs}}</br> Ver todos...</td>
+					<td>{{#lista_ligas}} {{nombre}} </br>{{/lista_ligas}}</br> Ver todos...</td>
+					<td>{{#lista_torneos}} {{nombre}} </br>{{/lista_torneos}}</br> Ver todos...</td>
+					<td>{{#lista_jugadores}} {{nombre}} </br>{{/lista_jugadores}}</br> Ver todos...</td>
+					<td>{{#lista_noticias}} {{nombre}} </br>{{/lista_noticias}}</br> Ver todos...</td>
+				</tr>
+				</table>
 					<form action="/logout" method="post">
 						<input type="submit" value="Sign Out" /></br>
 					</form>

@@ -39,6 +39,7 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/url_accionar_listado_ligas").permitAll();
 		http.authorizeRequests().antMatchers("/url_accionar_listado_noticias").permitAll();
 		http.authorizeRequests().antMatchers("/url_accionar_listado_torneos").permitAll();
+		http.authorizeRequests().antMatchers("/error").permitAll();
 		
 		//Paginas privadas
 		http.authorizeRequests().anyRequest().authenticated();
