@@ -14,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 @Configuration
-
 public class CSRFHandlerConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override

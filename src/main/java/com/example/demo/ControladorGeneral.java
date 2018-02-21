@@ -67,4 +67,6 @@ public class ControladorGeneral {
 	public String acceso_loginerror(Model modelo) {
 		return "loginerror";
 	}
+	
+	
 }
