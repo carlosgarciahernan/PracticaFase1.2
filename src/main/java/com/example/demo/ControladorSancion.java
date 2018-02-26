@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +29,8 @@ public class ControladorSancion {
 	}
 	
 	@RequestMapping("url_accionar_edicion_sanciones")
-	public String ingresar_sanciones(Model modelo,@RequestParam long partido,@RequestParam long jugador,@RequestParam String detalles) {
-		Sancion sancion = new Sancion(repositorio_de_partidos.getOne(partido),repositorio_de_jugadores.getOne(jugador),detalles);
+	public String ingresar_sanciones(Model modelo,@RequestParam long partido,@RequestParam long jugador,@RequestParam String detalles,Authentication auth) {
+		Sancion sancion = new Sancion(repositorio_de_partidos.getOne(partido),repositorio_de_jugadores.getOne(jugador),detalles,auth.getName());
 		repositorio_de_sanciones.saveAndFlush(sancion);
 		repositorio_de_partidos.getOne(partido).getFaltas().add(sancion);
 		repositorio_de_partidos.flush();

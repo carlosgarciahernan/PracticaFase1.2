@@ -29,11 +29,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/logout").permitAll();
 
         // Private pages (all other pages)
-        http.authorizeRequests().antMatchers("/home").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
-
-
-
+        http.authorizeRequests().antMatchers("/home.html").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/admin.html").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/edicion_jugador.html").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/edicion_clubs.html").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/edicion_ligas.html").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/edicion_noticias.html").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/edicion_partidos.html").hasAnyRole("ADMIN");
+        
         // Login form
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");

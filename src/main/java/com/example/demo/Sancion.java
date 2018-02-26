@@ -19,16 +19,19 @@ public class Sancion {
 	@OneToOne
 	private Jugador jugador;
 	
+	private String creador;
+	
 	private String detalles;
 
 	public Sancion() {
 		
 	}
 	
-	public Sancion(Partido partido,Jugador jugador,String detalles) {
+	public Sancion(Partido partido,Jugador jugador,String detalles,String creador) {
 		this.partido=partido;
 		this.jugador=jugador;
 		this.detalles=detalles;
+		this.creador=creador;
 	}
 	public long getId() {
 		return id;
@@ -36,6 +39,16 @@ public class Sancion {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	
+
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
 	}
 
 	public Partido getPartido() {

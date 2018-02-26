@@ -32,15 +32,30 @@ public class Partido {
 	
 	private String fecha;
 	
+	private String creador;
+	
 	public Partido() {
 		
 	}
 	
-	public Partido(Club equipo1,Club equipo2,String fecha,String resultado) {
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
+
+
+
+
+	public Partido(Club equipo1,Club equipo2,String fecha,String resultado,String creador) {
 		this.equipo1=equipo1;
 		this.equipo2=equipo2;
 		this.fecha=fecha;
 		this.resultado=resultado;
+		this.creador=creador;
 	}
 	
 	public String getEquipo_escrito() {

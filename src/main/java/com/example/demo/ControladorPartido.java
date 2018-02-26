@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,11 +34,11 @@ public class ControladorPartido {
 	}
 	
 	@RequestMapping("url_accionar_creacion_partido")
-	public String ingresar_partidos(Model modelo,@RequestParam String resultado,@RequestParam long equipo1,@RequestParam long equipo2,@RequestParam String fecha) {
+	public String ingresar_partidos(Model modelo,@RequestParam String resultado,@RequestParam long equipo1,@RequestParam long equipo2,@RequestParam String fecha,Authentication auth) {
 		List<Club> lista = new ArrayList<Club>(); 
 		lista.add(repositorio_de_clubs.getOne(equipo1));
 		lista.add(repositorio_de_clubs.getOne(equipo2));
-		Partido partido = new Partido(lista.get(0),lista.get(1),fecha,resultado);
+		Partido partido = new Partido(lista.get(0),lista.get(1),fecha,resultado,auth.getName());
 		modelo.addAttribute("partido",partido);
 		repositorio_de_partidos.saveAndFlush(partido);
 		return "edicion_partidos";

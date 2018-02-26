@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +33,7 @@ public class ControladorTorneo {
 	}
 	
 	@RequestMapping("url_accionar_creacion_torneos")
-	public String crear_torneo(Model modelo, String nombre_liga,String organizacion) {
+	public String crear_torneo(Model modelo, String nombre_liga,String organizacion,Authentication auth) {
 		List<Torneo> lista = repositorio_de_torneos.findAll();
 		boolean repetido=false;
 		for(Torneo j: lista) {
@@ -42,7 +43,7 @@ public class ControladorTorneo {
 			}
 		}
 		if(!repetido) {
-			Torneo l = new Torneo(nombre_liga,organizacion);
+			Torneo l = new Torneo(nombre_liga,organizacion,auth.getName());
 			repositorio_de_torneos.save(l);
 		}
 		return "edicion_ligas";

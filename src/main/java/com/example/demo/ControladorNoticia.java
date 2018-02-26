@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,8 +41,8 @@ public class ControladorNoticia {
 	}
 	
 	@RequestMapping("url_accionar_creacion_noticias")
-	public String crear_torneo(Model modelo, String titulo,String autor,String resumen,String cuerpoNoticia) {
-		Noticia n = new Noticia(titulo,autor,resumen,cuerpoNoticia);
+	public String crear_torneo(Model modelo, String titulo,String autor,String resumen,String cuerpoNoticia,Authentication auth) {
+		Noticia n = new Noticia(titulo,autor,resumen,cuerpoNoticia,auth.getName());
 		repositorio_de_noticias.saveAndFlush(n);
 		return "edicion_noticias";
 	}

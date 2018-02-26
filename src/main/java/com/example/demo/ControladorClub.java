@@ -3,7 +3,10 @@ package com.example.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,7 +53,7 @@ public class ControladorClub {
 	}
 	
 	@RequestMapping("url_accionar_creacion_club")
-	public String crear_club(Model modelo, String nombre_club,String abreviatura,String fecha_creacion) {
+	public String crear_club(Model modelo, String nombre_club,String abreviatura,String fecha_creacion, Authentication auth) {
 		List<Club> lista = repositorio_de_clubs.findAll();
 		boolean repetido=false;
 		for(Club c:lista) {
@@ -62,7 +65,7 @@ public class ControladorClub {
 		if(repetido) {
 					
 		}else {
-			Club c = new Club(nombre_club,abreviatura,fecha_creacion);
+			Club c = new Club(nombre_club,abreviatura,fecha_creacion,auth.getName());
 			repositorio_de_clubs.save(c);
 		}
 		return "edicion_clubs";

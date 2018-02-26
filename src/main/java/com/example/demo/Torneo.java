@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Torneo {
@@ -23,6 +24,8 @@ public class Torneo {
 	
 	@OneToMany
 	private List<Club> listado_de_clubs;
+	
+	private String creador;
 	
 	private String clubs_escrito;
 
@@ -49,13 +52,25 @@ public class Torneo {
 	}
 
 	
+	
+	
+
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
 	public Torneo() {
 		
 	}
 	
-	public Torneo(String nombre,String nombre_organizacion) {
+	public Torneo(String nombre,String nombre_organizacion,String creador) {
 		this.nombre=nombre;
 		this.nombre_organizacion=nombre_organizacion;
+		this.creador=creador;
 	}
 	
 	public List<Club> getListado_de_clubs() {

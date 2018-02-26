@@ -34,12 +34,13 @@ public class Jugador {
 	private int goles;
 	private int partidos_jugados;
 
+	private String creador;
 	
 	public Jugador() {
 		
 	}
 	
-	public Jugador(String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,Club clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados) {
+	public Jugador(String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,Club clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados,String creador) {
 
 		this.nombre=nombre;
 		this.primerApellido=primerApellido;
@@ -54,9 +55,19 @@ public class Jugador {
 		this.dorsal=dorsal;
 		this.goles=goles;
 		this.partidos_jugados=partidos_jugados;
-		
+		this.creador=creador;
 	}
 	
+	
+
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
 	public List<Sancion> getSanciones() {
 		return sanciones;
 	}

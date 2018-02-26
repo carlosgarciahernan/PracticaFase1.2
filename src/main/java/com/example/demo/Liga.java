@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Liga {
@@ -28,7 +29,8 @@ public class Liga {
 
 	private String nombre_organizacion;
 	
-
+	private String creador;
+	
 	public String getNombre_organizacion() {
 		return nombre_organizacion;
 	}
@@ -45,6 +47,17 @@ public class Liga {
 		return resultado;
 	}
 
+	
+	
+
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
 	public void setClubs_escrito(String clubs_escrito) {
 		this.clubs_escrito = clubs_escrito;
 	}
@@ -54,9 +67,10 @@ public class Liga {
 		
 	}
 	
-	public Liga(String nombre,String nombre_organizacion) {
+	public Liga(String nombre,String nombre_organizacion,String creador) {
 		this.nombre=nombre;
 		this.nombre_organizacion=nombre_organizacion;
+		this.creador=creador;
 	}
 	
 	public List<Club> getListado_de_clubs() {

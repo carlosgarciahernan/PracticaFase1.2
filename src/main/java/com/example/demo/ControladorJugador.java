@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,7 +56,7 @@ public class ControladorJugador {
 	}
 	
 	@RequestMapping("url_accionar_creacion_futbolista")
-	public String crear_futbolista(Model modelo, String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,long clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados) {
+	public String crear_futbolista(Model modelo, String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,long clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados, Authentication auth) {
 		List<Jugador> lista = repositorio_de_jugadores.findAll();
 		boolean repetido=false;
 		for(Jugador j: lista) {
@@ -66,7 +67,7 @@ public class ControladorJugador {
 		}
 		if(!repetido) {
 			Club c = repositorio_de_clubs.getOne(clubActual);
-			Jugador j= new Jugador(nombre,primerApellido,segundoApellido,genero,edad,provincia,ciudad,c,altura,peso,dorsal,goles, partidos_jugados);
+			Jugador j= new Jugador(nombre,primerApellido,segundoApellido,genero,edad,provincia,ciudad,c,altura,peso,dorsal,goles, partidos_jugados,auth.getName());
 			repositorio_de_jugadores.saveAndFlush(j);
 			c.getJugadores().add(j);
 			repositorio_de_clubs.flush();

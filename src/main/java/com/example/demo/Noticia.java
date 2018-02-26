@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Noticia {
@@ -18,6 +19,8 @@ public class Noticia {
 	private String resumen;
 	private String cuerpoNoticia;
 	private String autor;
+	
+	private String creador;
 	
 	public String getResumen() {
 		return resumen;
@@ -45,11 +48,22 @@ public class Noticia {
 
 
 	
-	public Noticia(String titulo,String autor,String resumen,String cuerpoNoticia) {
+	
+
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
+	public Noticia(String titulo,String autor,String resumen,String cuerpoNoticia,String creador) {
 		this.titulo=titulo;
 		this.autor=autor;
 		this.resumen=resumen;
 		this.cuerpoNoticia=cuerpoNoticia;
+		this.creador=creador;
 	}
 
 	public Noticia() {
