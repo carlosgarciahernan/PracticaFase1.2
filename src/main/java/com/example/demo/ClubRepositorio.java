@@ -12,4 +12,6 @@ public interface ClubRepositorio extends JpaRepository<Club,Long>{
 	
 	List<Club> findByAbreviaturaOrderByAbreviaturaAsc(String abreviatura);
 	List<Club> findByAbreviaturaOrderByAbreviaturaDesc(String abreviatura);
+	
+	List<Club> findByCreadorOrderByCreadorAsc(String creador);
 }

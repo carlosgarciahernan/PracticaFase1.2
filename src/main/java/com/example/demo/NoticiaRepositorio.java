@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface NoticiaRepositorio extends JpaRepository<Noticia,Long>{
 
 	List<Noticia> findByTituloOrderByTituloAsc(String titulo);
+	
+	List<Noticia> findByCreadorOrderByCreadorAsc(String creador);
 }

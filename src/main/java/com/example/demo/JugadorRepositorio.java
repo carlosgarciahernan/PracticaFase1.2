@@ -26,6 +26,8 @@ public interface JugadorRepositorio extends JpaRepository<Jugador,Long>{
 	List<Jugador> findByProvinciaOrderByProvinciaAsc(String provincia);
 	List<Jugador> findByProvinciaOrderByProvinciaDesc(String provincia);
 	
+	List<Jugador> findByCreadorOrderByCreadorAsc(String creador);
+	
 	/*List<Jugador> findByClubActualOrderByClubActualAsc(String clubActual);
 	List<Jugador> findByClubActualOrderByClubActualDesc(String clubActual);*/
 }

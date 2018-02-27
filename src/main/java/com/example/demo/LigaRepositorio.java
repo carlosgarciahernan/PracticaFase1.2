@@ -8,4 +8,6 @@ public interface LigaRepositorio extends JpaRepository<Liga,Long>{
 
 	List<Liga> findByNombreOrderByNombreAsc(String nombre);
 	List<Liga> findByNombreOrderByNombreDesc(String nombre);
+	
+	List<Liga> findByCreadorOrderByCreadorAsc(String creador);
 }
