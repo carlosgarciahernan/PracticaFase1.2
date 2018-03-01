@@ -56,7 +56,7 @@ public class ControladorJugador {
 	}
 	
 	@RequestMapping("url_accionar_creacion_futbolista")
-	public String crear_futbolista(Model modelo, String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,long clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados, Authentication auth) {
+	public String crear_futbolista(Model modelo, String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,long clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados, String correo_contacto ,Authentication auth) {
 		List<Jugador> lista = repositorio_de_jugadores.findAll();
 		boolean repetido=false;
 		for(Jugador j: lista) {
@@ -67,11 +67,16 @@ public class ControladorJugador {
 		}
 		if(!repetido) {
 			Club c = repositorio_de_clubs.getOne(clubActual);
-			Jugador j= new Jugador(nombre,primerApellido,segundoApellido,genero,edad,provincia,ciudad,c,altura,peso,dorsal,goles, partidos_jugados,auth.getName());
+			Jugador j= new Jugador(nombre,primerApellido,segundoApellido,genero,edad,provincia,ciudad,c,altura,peso,dorsal,goles, partidos_jugados,auth.getName(),correo_contacto);
 			repositorio_de_jugadores.saveAndFlush(j);
 			c.getJugadores().add(j);
 			repositorio_de_clubs.flush();
 		}
 		return "edicion_jugador";
+	}
+	
+	@RequestMapping("contacto_jugador")
+	public String contactar_con_jugador(Model modelo) {
+		return "contacto_jugador";
 	}
 }

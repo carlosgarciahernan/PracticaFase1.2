@@ -36,11 +36,13 @@ public class Jugador {
 
 	private String creador;
 	
+	private String correo_contacto;
+	
 	public Jugador() {
 		
 	}
 	
-	public Jugador(String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,Club clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados,String creador) {
+	public Jugador(String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,Club clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados,String creador,String correo_contacto) {
 
 		this.nombre=nombre;
 		this.primerApellido=primerApellido;
@@ -56,6 +58,7 @@ public class Jugador {
 		this.goles=goles;
 		this.partidos_jugados=partidos_jugados;
 		this.creador=creador;
+		this.correo_contacto=correo_contacto;
 	}
 	
 	
@@ -193,6 +196,14 @@ public class Jugador {
 
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
+	}
+
+	public String getCorreo_contacto() {
+		return correo_contacto;
+	}
+
+	public void setCorreo_contacto(String correo_contacto) {
+		this.correo_contacto = correo_contacto;
 	}
 
 	
