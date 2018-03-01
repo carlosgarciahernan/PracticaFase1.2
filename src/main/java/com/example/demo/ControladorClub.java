@@ -70,4 +70,10 @@ public class ControladorClub {
 		}
 		return "edicion_clubs";
 	}
+	
+	@RequestMapping("contacto_club")
+	public String acceso_contacto_club(Model modelo) {
+		return "contacto_club";
+	}
+	
 }

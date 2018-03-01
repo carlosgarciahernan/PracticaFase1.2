@@ -33,7 +33,7 @@
 	</div>
 	<!-- End Navigation -->
 	
-	<!-- End Heading -->
+	
 	
 	<!-- Main -->
 	<div id="main">
@@ -43,31 +43,19 @@
 			</div>
 			<div id="content">
 				<div class="cl">&nbsp;</div>
-				<div class="grey-box">
-					<h3><a href="listado_clubs.html">listar clubs</a></h3>
-					<a href="#"><img src="css/images/main-1.jpg" alt="" /></a>
-					<p>
-						<span>En esta sección podrás listar los diferentes clubs y sus datos</span>
-						<a href="listado_clubs.html" class="button">Read more</a>
-					 </p>
+				<div class="video-box">
+					<form action="url_accionar_contacto_club">
+      	<p>Id del club</p>
+      	<input type='text' name='id_club'></input> <p>  </p>
+      	<p>Asunto</p>
+      	<input type='text' name='asunto'></input> <p>  </p>
+      	<p>Cuerpo</p>
+      	<textarea name="mensaje"></textarea>
+      	<input type="hidden" name="_csrf" value="{{token}}"/>
+      	<input type='submit' value='Enviar'></input></br> 
+      </form></br>
 				</div>
-				<div class="grey-box">
-					<h3><a href="contacto_club.html">contactar con un club </a></h3>
-					<a href="#"><img src="css/images/main-2.jpg" alt="" /></a>
-					<p>
-						<span>En esta sección podrás contactar con un club</span>
-						<a href="contacto_club.html" class="button">Read more</a>
-					 </p>
-				</div>
-				<div class="grey-box last">
-					<h3><a href="#">Crear clubs</a></h3>
-					<a href="edicion_clubs.html"><img src="css/images/main-3.jpg" alt="" /></a>
-					<p>
-						<span>En esta sección podrás crear clubs para posteriores consultas</span>
-						<a href="edicion_clubs.html" class="button">Read more</a>
-					 </p>
-				</div>
-				
+			</div>
 			<div class="cl">&nbsp;</div>
 		</div>
 	</div>

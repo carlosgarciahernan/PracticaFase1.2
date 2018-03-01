@@ -35,6 +35,8 @@ public class Club {
 	
 	private String creador;
 	
+	private String correo_contacto;
+	
 	public Club() {
 		
 	}
@@ -119,6 +121,16 @@ public class Club {
 	
 	public void setAbreviatura(String abreviatura) {
 		this.abreviatura = abreviatura;
+	}
+
+
+	public String getCorreo_contacto() {
+		return correo_contacto;
+	}
+
+
+	public void setCorreo_contacto(String correo_contacto) {
+		this.correo_contacto = correo_contacto;
 	}
 
 	
