@@ -42,11 +42,11 @@ public class APIEmail {
 	                        .put("Name", "Carlos"))
 	                    .put(Emailv31.Message.TO, new JSONArray()
 	                        .put(new JSONObject()
-	                            .put("Email", "carlosgarciaher_@hotmail.com")
+	                            .put("Email", repositorio_de_clubs.getOne(id_club).getCorreo_contacto())
 	                            .put("Name", "passenger 1")))
-	                    .put(Emailv31.Message.SUBJECT, "Your email flight plan!")
-	                    .put(Emailv31.Message.TEXTPART, "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!")
-	                    .put(Emailv31.Message.HTMLPART, "<h3>Dear passenger 1, welcome to Mailjet!</h3><br />May the delivery force be with you!")));
+	                    .put(Emailv31.Message.SUBJECT, asunto)
+	                    .put(Emailv31.Message.TEXTPART, mensaje)
+	                    .put(Emailv31.Message.HTMLPART, "<h3>"+mensaje+"</h3>")));
 	      response = client.post(request);
 	      System.out.println(response.getStatus());
 	      System.out.println(response.getData());

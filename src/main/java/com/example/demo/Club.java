@@ -42,12 +42,13 @@ public class Club {
 	}
 	
 	
-	public Club(String nombre,String abreviatura,String fecha_creacion,String creador) {
+	public Club(String nombre,String abreviatura,String fecha_creacion,String creador,String correo_contacto) {
 		this.nombre=nombre;
 		jugadores = new ArrayList<Jugador>();
 		this.abreviatura=abreviatura;
 		this.fecha_creacion=fecha_creacion;
 		this.creador=creador;
+		this.correo_contacto=correo_contacto;
 	}
 	
 	

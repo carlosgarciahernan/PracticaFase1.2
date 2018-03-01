@@ -53,7 +53,7 @@ public class ControladorClub {
 	}
 	
 	@RequestMapping("url_accionar_creacion_club")
-	public String crear_club(Model modelo, String nombre_club,String abreviatura,String fecha_creacion, Authentication auth) {
+	public String crear_club(Model modelo, String nombre_club,String abreviatura,String fecha_creacion, String correo_contacto,Authentication auth) {
 		List<Club> lista = repositorio_de_clubs.findAll();
 		boolean repetido=false;
 		for(Club c:lista) {
@@ -65,7 +65,7 @@ public class ControladorClub {
 		if(repetido) {
 					
 		}else {
-			Club c = new Club(nombre_club,abreviatura,fecha_creacion,auth.getName());
+			Club c = new Club(nombre_club,abreviatura,fecha_creacion,auth.getName(),correo_contacto);
 			repositorio_de_clubs.save(c);
 		}
 		return "edicion_clubs";
