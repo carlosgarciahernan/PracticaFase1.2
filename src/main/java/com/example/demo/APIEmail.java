@@ -82,4 +82,75 @@ public class APIEmail {
 		
 		return "contacto_club";
 	}
+	
+	@RequestMapping("url_accionar_notificacion_partido")
+	public String notificarProximoPartido(long equipo1,long equipo2,String fecha) throws JSONException, MailjetException, MailjetSocketTimeoutException {
+		 MailjetClient client;
+	      MailjetRequest request;
+	      MailjetResponse response;
+	      client = new MailjetClient("cc6a41628b7f05daa9ca653bde779ea1", "cd294e4d31df1d422df5e0c8cf23120c", new ClientOptions("v3.1"));
+	      JSONArray arrayJSON = new JSONArray();
+	      request = new MailjetRequest(Emailv31.resource)
+		            .property(Emailv31.MESSAGES, arrayJSON);
+	      if(repositorio_de_clubs.getOne(equipo1).getCorreo_contacto()!=null) {
+		      arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
+	                  .put("Email", "carlosgarciaher_@hotmail.com")
+	                  .put("Name", "LIGA URJC"))
+	              .put(Emailv31.Message.TO, new JSONArray()
+	                  .put(new JSONObject()
+	                      .put("Email", repositorio_de_clubs.getOne(equipo1).getCorreo_contacto())
+	                      .put("Name", repositorio_de_clubs.getOne(equipo1).getNombre())))
+	              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
+	              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
+	              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
+	      }
+	      
+	      if(repositorio_de_clubs.getOne(equipo2).getCorreo_contacto()!=null) {
+		      arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
+	                  .put("Email", "carlosgarciaher_@hotmail.com")
+	                  .put("Name", "LIGA URJC"))
+	              .put(Emailv31.Message.TO, new JSONArray()
+	                  .put(new JSONObject()
+	                      .put("Email", repositorio_de_clubs.getOne(equipo2).getCorreo_contacto())
+	                      .put("Name", repositorio_de_clubs.getOne(equipo2).getNombre())))
+	              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
+	              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
+	              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
+	      }
+	      for(Jugador j: repositorio_de_clubs.getOne(equipo1).getJugadores()) {
+	    	  if(j.getCorreo_contacto()!=null) {
+		    	  arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
+		                  .put("Email", "carlosgarciaher_@hotmail.com")
+		                  .put("Name", "LIGA URJC"))
+		              .put(Emailv31.Message.TO, new JSONArray()
+		                  .put(new JSONObject()
+		                      .put("Email", j.getCorreo_contacto())
+		                      .put("Name", j.getNombre())))
+		              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
+		              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
+		              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
+	    	  }
+	      }
+	      
+	      for(Jugador j: repositorio_de_clubs.getOne(equipo2).getJugadores()) {
+	    	  if(j.getCorreo_contacto()!=null) {
+		    	  arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
+		                  .put("Email", "carlosgarciaher_@hotmail.com")
+		                  .put("Name", "LIGA URJC"))
+		              .put(Emailv31.Message.TO, new JSONArray()
+		                  .put(new JSONObject()
+		                      .put("Email", j.getCorreo_contacto())
+		                      .put("Name", j.getNombre())))
+		              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
+		              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
+		              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
+	    	  }
+	      }
+	      
+	      
+	      response = client.post(request);
+	      System.out.println(response.getStatus());
+	      System.out.println(response.getData());
+	      return "edicion_partidos";
+	}
 }
