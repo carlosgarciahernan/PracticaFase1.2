@@ -40,12 +40,6 @@
 		<div class="shell">		
 			<div class="cl">&nbsp;</div>	
 			<div id="sidebar">
-				<h2>LISTAR SEGÚN</h2>
-				<form action="url_accionar_listado_noticias">
-      	<input type='text' name='nombre_liga' value='Nombre'></input> <p>  </p>
-      	<input type='submit' value='Enviar'></input></br> 
-      	<input type="hidden" name="_csrf" value="{{token}}"/>
-      </form></br>
 			</div>
 			<div id="content">
 				
@@ -53,7 +47,7 @@
 				<div class="video-box">
 				<ul>
       			{{#lista}}
-      			<li><h2><a href="noticia_especifica?id={{id}}">{{titulo}}</a></h2>  <img src="images/noticia{{id}}" width="121" height="100" alt="" /> {{id}} {{autor}}</br>{{resumen}}</li>
+      			<li><h2><a href="{{url}}">{{title}}</a></h2>  <img src="{{urlToImage}}" width="121" height="100" alt="" />{{author}}</br>{{description}}</li>
       			{{/lista}}
      			 </ul>
 					<div class="cl">&nbsp;</div>

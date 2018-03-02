@@ -29,22 +29,12 @@ public class ControladorGeneral {
 			}
 		}
 		modelo.addAttribute("partidos",lista_partidos);
-		int numeroNoticias = (int)repositorio_de_noticias.count();
-		if(numeroNoticias>0) {
-			modelo.addAttribute("noticiaUna",repositorio_de_noticias.getOne((long)numeroNoticias));
-		}
-		if(numeroNoticias-1>0) {
-			modelo.addAttribute("noticia2",repositorio_de_noticias.getOne((long)numeroNoticias-1));
-		}
-		if(numeroNoticias-2>0) {
-			modelo.addAttribute("noticia3",repositorio_de_noticias.getOne((long)numeroNoticias-2));
-		}
-		if(numeroNoticias-3>0) {
-			modelo.addAttribute("noticia4",repositorio_de_noticias.getOne((long)numeroNoticias-3));
-		}
-		if(numeroNoticias-4>0) {
-			modelo.addAttribute("noticia5",repositorio_de_noticias.getOne((long)numeroNoticias-4));
-		}
+		APINoticias.cargar_lista_noticias();
+		modelo.addAttribute("noticiaUna", APINoticias.top_headlines.getArticles().get(0));
+		modelo.addAttribute("noticia2", APINoticias.top_headlines.getArticles().get(1));
+		modelo.addAttribute("noticia3", APINoticias.top_headlines.getArticles().get(2));
+		modelo.addAttribute("noticia4", APINoticias.top_headlines.getArticles().get(3));
+		modelo.addAttribute("noticia5", APINoticias.top_headlines.getArticles().get(4));
 		return "index";
 	}
 	

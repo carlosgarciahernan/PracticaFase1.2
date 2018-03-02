@@ -21,12 +21,7 @@ public class ControladorNoticia {
 		return "noticias";
 	}
 	
-	@RequestMapping("/listado_noticias")
-	public String acceso_listado_noticias(Model modelo) {
-		List<Noticia> lista = repositorio_de_noticias.findAll();
-		modelo.addAttribute("lista",lista);
-		return "listado_noticias";
-	}
+	
 	
 	@RequestMapping("/edicion_noticias")
 	public String acceso_edicion_noticias(Model modelo) {
@@ -47,13 +42,5 @@ public class ControladorNoticia {
 		return "edicion_noticias";
 	}
 	
-	@RequestMapping("url_accionar_listado_noticias")
-	public String listar_noticias(Model modelo,String titulo) {
-		List<Noticia> lista = new ArrayList<Noticia>();
-			lista = repositorio_de_noticias.findByTituloOrderByTituloAsc(titulo);
-		if(titulo.equals(""))
-			lista = repositorio_de_noticias.findAll();
-		modelo.addAttribute("lista",lista);
-		return "listado_noticias";
-	}
+	
 }
