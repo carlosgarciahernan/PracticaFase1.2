@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Torneo {
 
@@ -19,9 +21,11 @@ public class Torneo {
 	
 	private String nombre;
 	
+	@JsonIgnore
 	@OneToMany
 	private List<Partido> partidos_planificados;
 	
+	@JsonIgnore
 	@OneToMany
 	private List<Club> listado_de_clubs;
 	

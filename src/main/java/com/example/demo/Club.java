@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Club {
 
@@ -30,6 +32,7 @@ public class Club {
 	private String abreviatura;
 	
 	//Lista de jugadores del club
+	@JsonIgnore
 	@OneToMany
 	private List<Jugador> jugadores;
 	

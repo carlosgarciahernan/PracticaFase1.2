@@ -42,4 +42,9 @@ public class ControladorGeneral {
 	public String acceso_contacto(Model modelo) {
 		return "contacto";
 	}
+	
+	@RequestMapping("/api")
+	public String acceso_api(Model modelo) {
+		return "api";
+	}
 }

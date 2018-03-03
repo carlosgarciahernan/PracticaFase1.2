@@ -11,6 +11,8 @@ import javax.persistence.OneToOne;
 
 import org.springframework.ui.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Jugador {
 
@@ -25,6 +27,8 @@ public class Jugador {
 	private int edad;
 	private String provincia;
 	private String ciudad;
+	
+	@JsonIgnore
 	@OneToOne
     private Club clubActual;
 	
