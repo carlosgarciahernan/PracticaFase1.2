@@ -25,7 +25,7 @@ Esta aplicación consiste en la gestión general de un equipo de fútbol en una 
   **Servicio Interno:**
  
     
-    - Actualizar la clasificación
+    - Actualizar las noticias.
     - Notificar convocatoria a usuarios.
     - Servicio de correo interno.
 
