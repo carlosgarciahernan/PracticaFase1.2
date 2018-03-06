@@ -21,7 +21,8 @@ public class ControladorGeneral {
 
 	@RequestMapping("/index")
 	public String peticiones_entrantes(Model modelo) {
-		APINoticias.cargar_lista_noticias();
+		if(APINoticias.top_headlines.getArticles()!=null)
+			APINoticias.cargar_lista_noticias();
 		int numeroPartidos = (int)repositorio_de_partidos.count();
 		List<Partido> lista_partidos = new ArrayList<Partido>();
 		for(int i=numeroPartidos;i>numeroPartidos-5;i--) {
@@ -30,11 +31,13 @@ public class ControladorGeneral {
 			}
 		}
 		modelo.addAttribute("partidos",lista_partidos);
+		if(APINoticias.top_headlines.getArticles()!=null) {
 		modelo.addAttribute("noticiaUna", APINoticias.top_headlines.getArticles().get(0));
 		modelo.addAttribute("noticia2", APINoticias.top_headlines.getArticles().get(1));
 		modelo.addAttribute("noticia3", APINoticias.top_headlines.getArticles().get(2));
 		modelo.addAttribute("noticia4", APINoticias.top_headlines.getArticles().get(3));
 		modelo.addAttribute("noticia5", APINoticias.top_headlines.getArticles().get(4));
+		}
 		return "index";
 	}
 	

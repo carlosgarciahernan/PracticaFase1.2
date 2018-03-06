@@ -22,7 +22,7 @@ public class APINoticias {
 	
 	public static void cargar_lista_noticias() {
 		try {
-			top_headlines = JSON_MAPPER.readValue(new URL("http://beta.newsapi.org/v2/top-headlines?sources=marca&apiKey=5096d671cc6b4fac9f3f3a7389233832"),top_headlines.getClass());
+			top_headlines = JSON_MAPPER.readValue(new URL("https://newsapi.org/v2/top-headlines?sources=marca&apiKey=b25c14b6aac64f2ba5e1a9849c995460"),top_headlines.getClass());
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,7 +41,7 @@ public class APINoticias {
 	@RequestMapping("/listado_noticias")
 	public String listar_noticias(Model modelo) {
 		try {
-			top_headlines = JSON_MAPPER.readValue(new URL("http://beta.newsapi.org/v2/top-headlines?sources=marca&apiKey=5096d671cc6b4fac9f3f3a7389233832"),top_headlines.getClass());
+			top_headlines = JSON_MAPPER.readValue(new URL("https://newsapi.org/v2/top-headlines?sources=marca&apiKey=b25c14b6aac64f2ba5e1a9849c995460"),top_headlines.getClass());
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
