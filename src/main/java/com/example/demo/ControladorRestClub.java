@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RestControlle; //rep
+// pasar el .json a objetos java 
+// de los clubs 
 @RestController
 public class ControladorRestClub {
-
+	
 	@Autowired
 	private ClubRepositorio repositorio_de_clubs;
 	
@@ -19,8 +21,10 @@ public class ControladorRestClub {
 		return repositorio_de_clubs.findAll();
 	}
 	
+	
 	@RequestMapping(value="/API/clubs/{clubName}", method = RequestMethod.GET)
 	public List<Club> getClubs(@PathVariable("clubName") String clubName) {
 		return repositorio_de_clubs.findByNombreOrderByNombreAsc(clubName);
 	}
+	
 }
