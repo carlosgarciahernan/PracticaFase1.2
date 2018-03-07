@@ -14,8 +14,7 @@ import org.springtramework.web.bind.annotation.PathVariable:						//rep
 @RestController
 public class ControladorRestJugador {
 
-	@Autowired
-	private JugadorRepositorio repositorio_de_jugadores;
+
 	
 	@RequestMapping(value="/API/jugadores", method = RequestMethod.GET)
 	public List<Jugador> getJugadores(){
