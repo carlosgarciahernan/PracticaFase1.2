@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+// pasar de json a objeto java
+//LIGAS
+
 @RestController
 public class ControladorRestLiga {
 
@@ -19,8 +22,11 @@ public class ControladorRestLiga {
 		return repositorio_de_ligas.findAll();
 	}
 	
+	
 	@RequestMapping(value="/API/ligas/{ligaName}", method = RequestMethod.GET)
 	public List<Liga> getClubs(@PathVariable("ligaName") String ligaName) {
 		return repositorio_de_ligas.findByNombreOrderByNombreAsc(ligaName);
+	//      return repositorio_de_ligas.findByNombreOrderByNombreDes(ligaName);	
 	}
+	
 }
