@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springtramework.web.bind.annotation.PathVariable:	//rep
+import org.springframework.web.bind.annotation.PathVariable:	//rep
 // paso de json a objeto java
 // Jugadores
 
