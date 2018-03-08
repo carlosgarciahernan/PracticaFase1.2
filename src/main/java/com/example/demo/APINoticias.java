@@ -16,7 +16,6 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 @Controller
 public class APINoticias {
 
@@ -43,10 +42,8 @@ public class APINoticias {
 	
 	@RequestMapping("/listado_noticias")
 	public String listar_noticias(Model modelo) {
-		
 		try {
 			top_headlines = JSON_MAPPER.readValue(new URL("https://newsapi.org/v2/top-headlines?sources=marca&apiKey=b25c14b6aac64f2ba5e1a9849c995460"),top_headlines.getClass());
-														         	// key api noticias 
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -63,7 +60,5 @@ public class APINoticias {
 		
 		modelo.addAttribute("lista",top_headlines.getArticles());
 		return "listado_noticias";
-		
 	}
-	
 }
