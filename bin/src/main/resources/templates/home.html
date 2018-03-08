@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Free CSS template by ChocoTemplates.com</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+</head>
+<body>
+	<!-- Header -->
+	<div id="header">
+		<div class="shell">
+			<!-- Logo -->
+			<h1 id="logo" class="notext"><a href="index.html">LIGA URJC</a></h1>
+			<!-- End Logo -->
+		</div>
+	</div>
+	<!-- End Header -->
+	
+	<!-- Navigation -->
+	<div id="navigation">
+		<div class="shell">
+			<div class="cl">&nbsp;</div>
+			<ul>
+			    <li><a href="ligas.html">ligas</a></li>
+			    <li><a href="clubs.html">clubs</a></li>
+			    <li><a href="jugadores.html">jugadores</a></li>
+			    <li><a href="noticias.html">noticias</a></li>
+			    <li><a href="contacto.html">contacto</a></li>
+			</ul>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Navigation -->
+	
+	
+	
+	<!-- Main -->
+	<div id="main">
+		<div class="shell">		
+			<div class="cl">&nbsp;</div>	
+			<div id="content">
+				
+				<div class="cl">&nbsp;</div>
+				<div class="video-box">
+				{{#admin}}
+
+				<h2><a href="/admin">Accede a las herramientas de entrenador</a></h2>
+
+				{{/admin}}
+
+				<table>
+					<tr>
+						<th><h3>Jugadores que has creado:</h3></th>
+					</tr>
+					<tr>
+						<td>
+							<ul>
+								{{#lista_jugadores_propios}}
+									<li><a href="jugador_especifico?id={{id}}">{{nombre}} {{primerApellido}} {{segundoApellido}}</a></li>
+								{{/lista_jugadores_propios}}
+							</ul>
+						</td>
+					</tr>
+				</table>
+				</br>
+				<table>
+					<tr>
+						<th><h3>Clubs que has creado:</h3></th>
+					</tr>
+					<tr>
+						<td>
+							<ul>
+								{{#lista_clubs_propios}}
+									<li><a href="club_especifico?id={{id}}">{{nombre}}</a></li>
+								{{/lista_clubs_propios}}
+							</ul>
+						</td>
+					</tr>
+				</table>
+				</br>
+				<table>
+					<tr>
+						<th><h3>Ligas que has creado:</h3></th>
+					</tr>
+					<tr>
+						<td>
+							<ul>
+								{{#lista_ligas_propias}}
+									<li><a href="liga_especifica?id={{id}}">{{nombre}}</a></li>
+								{{/lista_ligas_propias}}
+							</ul>
+						</td>
+					</tr>
+				</table>
+				</br>
+				<table>
+					<tr>
+						<th><h3>Torneos que has creado:</h3></th>
+					</tr>
+					<tr>
+						<td>
+							<ul>
+								{{#lista_torneos_propios}}
+									<li><a href="torneo_especifico?id={{id}}">{{nombre}}</a></li>
+								{{/lista_torneos_propios}}
+							</ul>
+						</td>
+					</tr>
+				</table>
+				</br>
+				<form action="/logout" method="post">
+
+				<input type="submit" value="Sign Out" />
+
+				<input type="hidden" name="_csrf" value="{{token}}"/>
+
+				</form></br>				
+					<div class="cl">&nbsp;</div>
+				</div>
+			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Main -->
+	
+	<!-- Footer -->
+	<div id="footer">
+		<div class="shell">
+			<div class="cl">&nbsp;</div>
+			<a href="#" class="left">TERMS OF USE</a>
+			<a href="#" class="left">PRIVACY POLICY</a>
+			<p class="right">&copy; Sitename.com. Design by <a href="http://chocotemplates.com">ChocoTemplates.com</a></p>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Footer -->
+</body>
+</html>
+<!DOCTYPE html>
