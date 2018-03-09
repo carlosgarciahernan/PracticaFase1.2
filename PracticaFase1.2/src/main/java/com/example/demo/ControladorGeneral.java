@@ -21,8 +21,6 @@ public class ControladorGeneral {
 
 	@RequestMapping("/index")
 	public String peticiones_entrantes(Model modelo) {
-		if(APINoticias.top_headlines.getArticles()!=null)
-			APINoticias.cargar_lista_noticias();
 		int numeroPartidos = (int)repositorio_de_partidos.count();
 		List<Partido> lista_partidos = new ArrayList<Partido>();
 		for(int i=numeroPartidos;i>numeroPartidos-5;i--) {

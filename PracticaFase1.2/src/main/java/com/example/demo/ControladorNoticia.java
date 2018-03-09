@@ -42,5 +42,10 @@ public class ControladorNoticia {
 		return "edicion_noticias";
 	}
 	
+	@RequestMapping("listado_noticias")
+	public String acceso_listado_noticias(Model modelo) {
+		modelo.addAttribute("lista",APINoticias.recuperar_noticias().getArticles());
+		return "listado_noticias";
+	}
 	
 }

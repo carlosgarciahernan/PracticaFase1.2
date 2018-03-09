@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.beans.factory.annotation.autowirred;
 
 @RestController
 public class ControladorRestTorneo {
@@ -24,20 +23,4 @@ public class ControladorRestTorneo {
 	public List<Torneo> getTorneo(@PathVariable("torneoName") String torneoName) {
 		return repositorio_de_torneos.findByNombreOrderByNombreAsc(torneoName);
 	}
-	
-	
-	/* o otra forma (posible error)
-	@Autowired
-	private TorneoRepositorio repositorio_de_torneos;
-	
-	@RequestMapping(value="/API/torneos", method = RequestMethod.GET)
-	public List<Torneo> getTorneos(){
-		return repositorio_de_torneos.findAll();
-	}
-	
-	@RequestMapping(value="/API/torneos/{torneoName}", method= RequestMethod.GET)
-	public List<Torneo> getTorneo(@PathVariable("torneoName") String torneoN) {
-		return repositorio_de_torneos.findByNombreOrderByNombreAsc();
-	*/
-
 }
