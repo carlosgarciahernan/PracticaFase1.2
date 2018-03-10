@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: servicio_email
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Carlos
+Implementation-Vendor-Id: servicio_email
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://projects.spring.io/spring-boot/servicio_ema
+ il/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

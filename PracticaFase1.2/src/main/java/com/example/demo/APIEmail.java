@@ -1,21 +1,15 @@
 package com.example.demo;
 
-import com.mailjet.client.ClientOptions;
-import com.mailjet.client.MailjetClient;
-import com.mailjet.client.MailjetRequest;
-import com.mailjet.client.MailjetResponse;
+
 import com.mailjet.client.errors.MailjetException;
 import com.mailjet.client.errors.MailjetSocketTimeoutException;
-import com.mailjet.client.resource.Emailv31;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -33,124 +27,150 @@ public class APIEmail {
 	
 	@RequestMapping("url_accionar_contacto_club")
 	public String contactar_con_club(Model modelo, long id_club,String asunto,String mensaje, Authentication auth) throws JSONException, MailjetException, MailjetSocketTimeoutException {
-		 MailjetClient client;
-	      MailjetRequest request;
-	      MailjetResponse response;
-	      client = new MailjetClient("cc6a41628b7f05daa9ca653bde779ea1", "cd294e4d31df1d422df5e0c8cf23120c", new ClientOptions("v3.1"));
-	      request = new MailjetRequest(Emailv31.resource)
-	            .property(Emailv31.MESSAGES, new JSONArray()
-	                .put(new JSONObject()
-	                    .put(Emailv31.Message.FROM, new JSONObject()
-	                        .put("Email", "carlosgarciaher_@hotmail.com")
-	                        .put("Name", "Carlos"))
-	                    .put(Emailv31.Message.TO, new JSONArray()
-	                        .put(new JSONObject()
-	                            .put("Email", repositorio_de_clubs.getOne(id_club).getCorreo_contacto())
-	                            .put("Name", "passenger 1")))
-	                    .put(Emailv31.Message.SUBJECT, asunto)
-	                    .put(Emailv31.Message.TEXTPART, mensaje)
-	                    .put(Emailv31.Message.HTMLPART, "<h3>"+mensaje+"</h3>")));
-	      response = client.post(request);
-	      System.out.println(response.getStatus());
-	      System.out.println(response.getData());
+		 
+		Mensaje mensajes = new Mensaje(repositorio_de_clubs.getOne(id_club).getCorreo_contacto(),asunto,mensaje);
+		 
+		 try {
+			 OkHttpClient client = new OkHttpClient();
+
+			 MediaType mediaType = MediaType.parse("application/json");
+			 RequestBody body = RequestBody.create(mediaType, "{\n\t\"correo\": \""+mensajes.getCorreo()+"\",\n\t\"asunto\": \""+mensajes.getAsunto()+"\",\n\t\"mensaje\": \""+mensajes.getMensaje()+"\"\n}");
+			 Request request = new Request.Builder()
+			   .url("http://127.0.0.1:4444/ServicioMensajeria/enviarMensajeaClub")
+			   .post(body)
+			   .addHeader("Content-Type", "application/json")
+			   .addHeader("Cache-Control", "no-cache")
+			   .addHeader("Postman-Token", "1fae90e0-8c7e-48dd-9abe-1e1fdfdfd2a8")
+			   .build();
+
+			 Response response = client.newCall(request).execute();
+			
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		}
+		 
+
+		 
 		
 		return "contacto_club";
 	}
 	
 	@RequestMapping("url_accionar_contacto_jugador")
 	public String contactar_con_jugador(Model modelo, long id_club,String asunto,String mensaje, Authentication auth) throws JSONException, MailjetException, MailjetSocketTimeoutException {
-		 MailjetClient client;
-	      MailjetRequest request;
-	      MailjetResponse response;
-	      client = new MailjetClient("cc6a41628b7f05daa9ca653bde779ea1", "cd294e4d31df1d422df5e0c8cf23120c", new ClientOptions("v3.1"));
-	      request = new MailjetRequest(Emailv31.resource)
-	            .property(Emailv31.MESSAGES, new JSONArray()
-	                .put(new JSONObject()
-	                    .put(Emailv31.Message.FROM, new JSONObject()
-	                        .put("Email", "carlosgarciaher_@hotmail.com")
-	                        .put("Name", "Carlos"))
-	                    .put(Emailv31.Message.TO, new JSONArray()
-	                        .put(new JSONObject()
-	                            .put("Email", repositorio_de_jugadores.getOne(id_club).getCorreo_contacto())
-	                            .put("Name", "passenger 1")))
-	                    .put(Emailv31.Message.SUBJECT, asunto)
-	                    .put(Emailv31.Message.TEXTPART, mensaje)
-	                    .put(Emailv31.Message.HTMLPART, "<h3>"+mensaje+"</h3>")));
-	      response = client.post(request);
-	      System.out.println(response.getStatus());
-	      System.out.println(response.getData());
-		
-		return "contacto_club";
+		Mensaje mensajes = new Mensaje(repositorio_de_clubs.getOne(id_club).getCorreo_contacto(),asunto,mensaje);
+		 
+		 try {
+			 OkHttpClient client = new OkHttpClient();
+
+			 MediaType mediaType = MediaType.parse("application/json");
+			 RequestBody body = RequestBody.create(mediaType, "{\n\t\"correo\": \""+mensajes.getCorreo()+"\",\n\t\"asunto\": \""+mensajes.getAsunto()+"\",\n\t\"mensaje\": \""+mensajes.getMensaje()+"\"\n}");
+			 Request request = new Request.Builder()
+			   .url("http://127.0.0.1:4444/ServicioMensajeria/enviarMensajeaClub")
+			   .post(body)
+			   .addHeader("Content-Type", "application/json")
+			   .addHeader("Cache-Control", "no-cache")
+			   .addHeader("Postman-Token", "1fae90e0-8c7e-48dd-9abe-1e1fdfdfd2a8")
+			   .build();
+
+			 Response response = client.newCall(request).execute();
+			
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		}
+		return "contacto_jugador";
 	}
 	
 	@RequestMapping("url_accionar_notificacion_partido")
 	public String notificarProximoPartido(long equipo1,long equipo2,String fecha) throws JSONException, MailjetException, MailjetSocketTimeoutException {
-		 MailjetClient client;
-	      MailjetRequest request;
-	      MailjetResponse response;
-	      client = new MailjetClient("cc6a41628b7f05daa9ca653bde779ea1", "cd294e4d31df1d422df5e0c8cf23120c", new ClientOptions("v3.1"));
-	      JSONArray arrayJSON = new JSONArray();
-	      request = new MailjetRequest(Emailv31.resource)
-		            .property(Emailv31.MESSAGES, arrayJSON);
-	      if(repositorio_de_clubs.getOne(equipo1).getCorreo_contacto()!=null) {
-		      arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
-	                  .put("Email", "carlosgarciaher_@hotmail.com")
-	                  .put("Name", "LIGA URJC"))
-	              .put(Emailv31.Message.TO, new JSONArray()
-	                  .put(new JSONObject()
-	                      .put("Email", repositorio_de_clubs.getOne(equipo1).getCorreo_contacto())
-	                      .put("Name", repositorio_de_clubs.getOne(equipo1).getNombre())))
-	              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
-	              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
-	              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
-	      }
-	      
-	      if(repositorio_de_clubs.getOne(equipo2).getCorreo_contacto()!=null) {
-		      arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
-	                  .put("Email", "carlosgarciaher_@hotmail.com")
-	                  .put("Name", "LIGA URJC"))
-	              .put(Emailv31.Message.TO, new JSONArray()
-	                  .put(new JSONObject()
-	                      .put("Email", repositorio_de_clubs.getOne(equipo2).getCorreo_contacto())
-	                      .put("Name", repositorio_de_clubs.getOne(equipo2).getNombre())))
-	              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
-	              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
-	              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
-	      }
+		Mensaje mensaje1 = new Mensaje(repositorio_de_clubs.getOne(equipo1).getCorreo_contacto(),"NUEVO PARTIDO PLANIFICADO","El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha);
+		Mensaje mensaje2 = new Mensaje(repositorio_de_clubs.getOne(equipo2).getCorreo_contacto(),"NUEVO PARTIDO PLANIFICADO","El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha);
+		 
+		 try {
+			 OkHttpClient client = new OkHttpClient();
+
+			 MediaType mediaType = MediaType.parse("application/json");
+			 RequestBody body = RequestBody.create(mediaType, "{\n\t\"correo\": \""+mensaje1.getCorreo()+"\",\n\t\"asunto\": \""+mensaje1.getAsunto()+"\",\n\t\"mensaje\": \""+mensaje1.getMensaje()+"\"\n}");
+			 Request request = new Request.Builder()
+			   .url("http://127.0.0.1:4444/ServicioMensajeria/enviarMensajeaClub")
+			   .post(body)
+			   .addHeader("Content-Type", "application/json")
+			   .addHeader("Cache-Control", "no-cache")
+			   .addHeader("Postman-Token", "1fae90e0-8c7e-48dd-9abe-1e1fdfdfd2a8")
+			   .build();
+
+			 Response response = client.newCall(request).execute();
+			
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		}
+		 try {
+			 OkHttpClient client = new OkHttpClient();
+
+			 MediaType mediaType = MediaType.parse("application/json");
+			 RequestBody body = RequestBody.create(mediaType, "{\n\t\"correo\": \""+mensaje2.getCorreo()+"\",\n\t\"asunto\": \""+mensaje2.getAsunto()+"\",\n\t\"mensaje\": \""+mensaje2.getMensaje()+"\"\n}");
+			 Request request = new Request.Builder()
+			   .url("http://127.0.0.1:4444/ServicioMensajeria/enviarMensajeaClub")
+			   .post(body)
+			   .addHeader("Content-Type", "application/json")
+			   .addHeader("Cache-Control", "no-cache")
+			   .addHeader("Postman-Token", "1fae90e0-8c7e-48dd-9abe-1e1fdfdfd2a8")
+			   .build();
+
+			 Response response = client.newCall(request).execute();
+			
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		}
+		
 	      for(Jugador j: repositorio_de_clubs.getOne(equipo1).getJugadores()) {
-	    	  if(j.getCorreo_contacto()!=null) {
-		    	  arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
-		                  .put("Email", "carlosgarciaher_@hotmail.com")
-		                  .put("Name", "LIGA URJC"))
-		              .put(Emailv31.Message.TO, new JSONArray()
-		                  .put(new JSONObject()
-		                      .put("Email", j.getCorreo_contacto())
-		                      .put("Name", j.getNombre())))
-		              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
-		              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
-		              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
-	    	  }
+	    	  Mensaje mensajeJugador = new Mensaje(j.getCorreo_contacto(),"NUEVO PARTIDO PLANIFICADO","El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha);
+	    	  try {
+	 			 OkHttpClient client = new OkHttpClient();
+
+	 			 MediaType mediaType = MediaType.parse("application/json");
+	 			 RequestBody body = RequestBody.create(mediaType, "{\n\t\"correo\": \""+mensajeJugador.getCorreo()+"\",\n\t\"asunto\": \""+mensajeJugador.getAsunto()+"\",\n\t\"mensaje\": \""+mensajeJugador.getMensaje()+"\"\n}");
+	 			 Request request = new Request.Builder()
+	 			   .url("http://127.0.0.1:4444/ServicioMensajeria/enviarMensajeaClub")
+	 			   .post(body)
+	 			   .addHeader("Content-Type", "application/json")
+	 			   .addHeader("Cache-Control", "no-cache")
+	 			   .addHeader("Postman-Token", "1fae90e0-8c7e-48dd-9abe-1e1fdfdfd2a8")
+	 			   .build();
+
+	 			 Response response = client.newCall(request).execute();
+	 			
+	 	        
+	 		} catch (IOException e) {
+	 			// TODO Auto-generated catch block
+	 		}
 	      }
 	      
 	      for(Jugador j: repositorio_de_clubs.getOne(equipo2).getJugadores()) {
-	    	  if(j.getCorreo_contacto()!=null) {
-		    	  arrayJSON.put(new JSONObject().put(Emailv31.Message.FROM, new JSONObject()
-		                  .put("Email", "carlosgarciaher_@hotmail.com")
-		                  .put("Name", "LIGA URJC"))
-		              .put(Emailv31.Message.TO, new JSONArray()
-		                  .put(new JSONObject()
-		                      .put("Email", j.getCorreo_contacto())
-		                      .put("Name", j.getNombre())))
-		              .put(Emailv31.Message.SUBJECT, "Nuevo partido planificado")
-		              .put(Emailv31.Message.TEXTPART, "El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha)
-		              .put(Emailv31.Message.HTMLPART, "<h3>"+"El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha+"</h3>"));
-	    	  }
+	    	  Mensaje mensajeJugador = new Mensaje(j.getCorreo_contacto(),"NUEVO PARTIDO PLANIFICADO","El partido entre "+repositorio_de_clubs.getOne(equipo1).getNombre()+" y "+repositorio_de_clubs.getOne(equipo2).getNombre()+" tendrá lugar el "+fecha);
+	    	  try {
+	 			 OkHttpClient client = new OkHttpClient();
+
+	 			 MediaType mediaType = MediaType.parse("application/json");
+	 			 RequestBody body = RequestBody.create(mediaType, "{\n\t\"correo\": \""+mensajeJugador.getCorreo()+"\",\n\t\"asunto\": \""+mensajeJugador.getAsunto()+"\",\n\t\"mensaje\": \""+mensajeJugador.getMensaje()+"\"\n}");
+	 			 Request request = new Request.Builder()
+	 			   .url("http://127.0.0.1:4444/ServicioMensajeria/enviarMensajeaClub")
+	 			   .post(body)
+	 			   .addHeader("Content-Type", "application/json")
+	 			   .addHeader("Cache-Control", "no-cache")
+	 			   .addHeader("Postman-Token", "1fae90e0-8c7e-48dd-9abe-1e1fdfdfd2a8")
+	 			   .build();
+
+	 			 Response response = client.newCall(request).execute();
+	 			
+	 	        
+	 		} catch (IOException e) {
+	 			// TODO Auto-generated catch block
+	 		}
 	      }
-	      
-	      
-	      response = client.post(request);
-	      System.out.println(response.getStatus());
-	      System.out.println(response.getData());
 	      return "edicion_partidos";
 	}
 }
