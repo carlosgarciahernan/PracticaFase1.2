@@ -105,7 +105,7 @@ PRE: Poner en pom.xml empaquetado con jar y añadir dos dependencias de com.sun.
 
 # DIAGRAMA DE CONEXION
 
-<img src="imagenesREADME/Diagrama de conexion.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/diagramaCOnexiones.png?raw=true"></img>
 
 # UML
 
