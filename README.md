@@ -97,7 +97,9 @@ PRE: Poner en pom.xml empaquetado con jar y añadir dos dependencias de com.sun.
 <img src="PracticaFase1.2/imagenes/12-CONTACTAR JUGADOR.jpg?raw=true"></img>
 <img src="PracticaFase1.2/imagenes/13-CREAR JUGADOR.jpg?raw=true"></img>
 <img src="PracticaFase1.2/imagenes/14-NOTICIAS.jpg?raw=true"></img>
-<img src="PracticaFase1.2/imagenes/15-CREAR NOTICIA.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenes/15-CREAR NOTICIA REGISTRADO ADMIN.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenes/15-CREAR NOTICIA SIN REGSISTRAR.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenes/15-VER NOTICIA.jpg?raw=true"></img>
 
 # DIAGRAMA ENTIDAD-RELACION
 
