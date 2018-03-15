@@ -83,21 +83,21 @@ PRE: Poner en pom.xml empaquetado con jar y añadir dos dependencias de com.sun.
   
 # DIAGRAMAS DE CAPTURAS
 
-<img src="imagenesREADME/1-INICIO.jpg?raw=true"></img>
-<img src="imagenesREADME/2-LIGAS.jpg?raw=true"></img>
-<img src="imagenesREADME/3-LISTAR LIGAS.jpg?raw=true"></img>
-<img src="imagenesREADME/4-LISTAR TORNEOS.jpg?raw=true"></img>
-<img src="imagenesREADME/5-CREAR LIGAS Y TORNEOS.jpg?raw=true"></img>
-<img src="imagenesREADME/6-CLUBS.jpg?raw=true"></img>
-<img src="imagenesREADME/7-LISTAR CLUBS.jpg?raw=true"></img>
-<img src="imagenesREADME/8-CONTACTAR CON CLUB.jpg?raw=true"></img>
-<img src="imagenesREADME/9-CREAR CLUBS.jpg?raw=true"></img>
-<img src="imagenesREADME/10-JUGADORES.jpg?raw=true"></img>
-<img src="imagenesREADME/11-LISTAR JUGADOR.jpg?raw=true"></img>
-<img src="imagenesREADME/12-CONTACTAR JUGADOR.jpg?raw=true"></img>
-<img src="imagenesREADME/13-CREAR JUGADOR.jpg?raw=true"></img>
-<img src="imagenesREADME/14-NOTICIAS.jpg?raw=true"></img>
-<img src="imagenesREADME/15-CREAR NOTICIA.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/1-INICIO.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/2-LIGAS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/3-LISTAR LIGAS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/4-LISTAR TORNEOS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/5-CREAR LIGAS Y TORNEOS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/6-CLUBS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/7-LISTAR CLUBS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/8-CONTACTAR CON CLUB.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/9-CREAR CLUBS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/10-JUGADORES.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/11-LISTAR JUGADOR.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/12-CONTACTAR JUGADOR.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/13-CREAR JUGADOR.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/14-NOTICIAS.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/15-CREAR NOTICIA.jpg?raw=true"></img>
 
 # DIAGRAMA ENTIDAD-RELACION
 
