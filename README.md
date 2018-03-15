@@ -101,7 +101,7 @@ PRE: Poner en pom.xml empaquetado con jar y añadir dos dependencias de com.sun.
 
 # DIAGRAMA ENTIDAD-RELACION
 
-<img src="imagenesREADME/Diagrama Entidad -Relacion.jpg?raw=true"></img>
+<img src="PracticaFase1.2/imagenesREADME/Diagrama Entidad -Relacion.jpg?raw=true"></img>
 
 # DIAGRAMA DE CONEXION
 
