@@ -30,7 +30,7 @@ public class User {
 
 	}
 
-	//edit del user logging
+
 	public User(String name, String password, String... roles) {
 		this.name = name;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);

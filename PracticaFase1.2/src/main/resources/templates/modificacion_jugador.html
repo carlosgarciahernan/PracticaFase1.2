@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Free CSS template by ChocoTemplates.com</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+</head>
+<body>
+	<!-- Header -->
+	<div id="header">
+		<div class="shell">
+			<!-- Logo -->
+			<h1 id="logo" class="notext"><a href="index.html">LIGA URJC</a></h1>
+			<!-- End Logo -->
+		</div>
+	</div>
+	<!-- End Header -->
+	
+	<!-- Navigation -->
+	<div id="navigation">
+		<div class="shell">
+			<div class="cl">&nbsp;</div>
+			<ul>
+			    <li><a href="ligas.html">ligas</a></li>
+			    <li><a href="clubs.html">clubs</a></li>
+			    <li><a href="jugadores.html">jugadores</a></li>
+			    <li><a href="noticias.html">noticias</a></li>
+			    <li><a href="contacto.html">contacto</a></li>
+			</ul>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Navigation -->
+	
+	
+	
+	<!-- Main -->
+	<div id="main">
+		<div class="shell">		
+			<div class="cl">&nbsp;</div>	
+			<div id="content">
+				
+				<div class="cl">&nbsp;</div>
+				<div class="video-box">
+				<form action="url_accionar_modificacion_futbolista">
+	  {{#jugador}}
+	  <p>Nombre</p>
+      <input type='text' name='nombre' value='{{nombre}}'></input>
+      <p>Primer apellido</p>
+      <input type='text' name='primerApellido' value='{{primerApellido}}'></input>
+      <p>Segundo apellido</p>
+      <input type='text' name='segundoApellido' value='{{segundoApellido}}'></input></br>
+      <p>Genero</p>
+      <input type='text' name='genero' value='{{genero}}'></input>
+      <p>Edad</p>
+      <input type='text' name='edad' value={{edad}}></input>
+      <p>Provincia</p>
+      <input type='text' name='provincia' value='{{provincia}}'></input></br>
+      <p>Ciudad</p>
+      <input type='text' name='ciudad' value='{{ciudad}}'></input>
+      <p>Id Club</p>
+      <input type='text' name='clubActual' value={{#clubActual}}{{id}}{{/clubActual}}></input>
+      <p>Altura</p>
+      <input type='text' name='altura' value={{altura}}></input></br>
+      <p>Peso</p>
+      <input type='text' name='peso' value={{peso}}></input>
+      <p>Dorsal</p>
+      <input type='text' name='dorsal' value={{dorsal}}></input>
+      <p>Goles</p>
+      <input type='text' name='goles' value={{goles}}></input></br>
+      <p>Partidos jugados</p>
+      <input type='text' name='partidos_jugados' value={{partidos_jugados}}></input></br>
+      <p>Correo de contacto</p>
+      <input type='text' name='correo_contacto' value='{{correo_contacto}}'></input></br>
+      <input type="hidden" name="_csrf" value="{{token}}"/>
+      <input type="hidden" name="id" value="{{id}}"/>
+      <input type='submit' value='Enviar'></input></br> 
+      {{/jugador}}
+      </form></br>
+					
+					<div class="cl">&nbsp;</div>
+				</div>
+			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Main -->
+	
+	<!-- Footer -->
+	<div id="footer">
+		<div class="shell">
+			<div class="cl">&nbsp;</div>
+			<a href="#" class="left">TERMS OF USE</a>
+			<a href="#" class="left">PRIVACY POLICY</a>
+			<p class="right">&copy; Sitename.com. Design by <a href="http://chocotemplates.com">ChocoTemplates.com</a></p>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</div>
+	<!-- End Footer -->
+</body>
+</html>

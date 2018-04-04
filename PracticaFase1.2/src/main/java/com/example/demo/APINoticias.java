@@ -20,7 +20,7 @@ public class APINoticias {
 	
 	public static top_headlines recuperar_noticias() {
 		try {
-			top_headlines = JSON_MAPPER.readValue(new URL("http://127.0.0.1:5555/ServicioNoticias/solicitarNoticias"),top_headlines.getClass());
+			top_headlines = JSON_MAPPER.readValue(new URL("http://127.0.0.1:7070/ServicioNoticias/solicitarNoticias"),top_headlines.getClass());
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

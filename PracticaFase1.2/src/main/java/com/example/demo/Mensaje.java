@@ -15,19 +15,18 @@ public class Mensaje {
 		this.asunto=asunto;
 		this.mensaje=mensaje;
 	}
-		public String toString() {
+	
+	public String toString() {
 		return "{ \n	\"correo\": \""+correo+",\"\n"+"	\"asunto\": \""+asunto+"\"\n	\"mensaje\": \""+mensaje+"\"\n}";
 				
 	}
 
 	public String getCorreo() {
 		return correo;
-		
 	}
 
 	public void setCorreo(String correo) {
 		this.correo = correo;
-		
 	}
 
 	public String getAsunto() {
@@ -36,18 +35,15 @@ public class Mensaje {
 
 	public void setAsunto(String asunto) {
 		this.asunto = asunto;
-		
 	}
 
 	public String getMensaje() {
 		return mensaje;
-		
 	}
 
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
-
 	
 	
 }

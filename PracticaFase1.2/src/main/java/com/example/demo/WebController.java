@@ -3,10 +3,15 @@ package com.example.demo;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -30,6 +35,9 @@ public class WebController {
 	@Autowired
 	private NoticiaRepositorio repositorio_de_noticias;
 	
+	@Autowired 
+	private UserRepository repositorio_de_usuarios;
+	
     @GetMapping("/")
     public String index() {
         return "index";
@@ -44,6 +52,23 @@ public class WebController {
     public String loginerror() {
     	return "loginerror";
     }
+    
+    @GetMapping("/registro")
+    public String registro() {
+    	return "registro";
+    }
+    
+    @RequestMapping("/creacionUsuario")
+	public String crear_Usuario(Model modelo, @RequestParam String username, @RequestParam String password) {
+    	User usuario = new User(username,password,"USER");
+    	User repetido = repositorio_de_usuarios.findByName(username);
+    	if(repetido==null) {
+    		repositorio_de_usuarios.save(usuario);
+    	}
+		return "registro";
+	}
+    
+    
 
     @GetMapping("/home")
     public String home(Model model, HttpServletRequest request, Authentication auth) {

@@ -79,4 +79,34 @@ public class ControladorJugador {
 	public String contactar_con_jugador(Model modelo) {
 		return "contacto_jugador";
 	}
+	
+	@RequestMapping("modificacion_jugador")
+	public String modificar_jugador(Model modelo,@RequestParam long id) {
+		Jugador j = repositorio_de_jugadores.findOne(id);
+		modelo.addAttribute("jugador",j);
+		return "modificacion_jugador";
+	}
+	
+	@RequestMapping("url_accionar_modificacion_futbolista")
+	public String accionar_modificacion_futbolista(Model modelo,String nombre,String primerApellido,String segundoApellido,String genero,int edad,String provincia,String ciudad,long clubActual,int altura,int peso,int dorsal,int goles,int partidos_jugados, String correo_contacto ,Authentication auth,long id) {
+		Club c = repositorio_de_clubs.getOne(clubActual);
+		List<Jugador> lista = repositorio_de_jugadores.findAll();
+		Jugador jugador = repositorio_de_jugadores.findOne(id);
+		jugador.setNombre(nombre);
+		jugador.setPrimerApellido(primerApellido);
+		jugador.setSegundoApellido(segundoApellido);
+		jugador.setGenero(genero);
+		jugador.setEdad(edad);
+		jugador.setProvincia(provincia);
+		jugador.setCiudad(ciudad);
+		jugador.setClubActual(c);
+		jugador.setAltura(altura);
+		jugador.setPeso(peso);
+		jugador.setDorsal(dorsal);
+		jugador.setPartidos_jugados(partidos_jugados);
+		jugador.setCorreo_contacto(correo_contacto);
+		repositorio_de_jugadores.flush();
+		return "jugadores";
+	}
+
 }
