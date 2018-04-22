@@ -9,7 +9,7 @@
 Carlos Garcia Hernan
 David Beltran Sanchez
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qUx7hZ05KDs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/qUx7hZ05KDs)
 
 # Descripción temática de la web:
 Esta aplicación consiste en la gestión general de un equipo de fútbol en una liga. Donde podremos crear un equipo, sus jugadores, una liga, torneos externos a la liga(Champions League, Copa del Rey, etc.).
