@@ -14,9 +14,13 @@ El Servicio interno esta compuesto por un baladeador con el que tiene contacto e
 (este ultimo es una replica del primero) que dispone de una tolerancia a fallos para que en caso de caida del servicio web1 pueda redirigir al servicio web2.
 
 Cada uno de los servicios webs tiene instalado un balanceador y cumple con 3 funciones:
+
 1º Se encarga de balancear la carga del servicio interno noticias tanto al servicio noticias1 como al servicio noticias2, por lo que ofrece tolerancia a fallos.
+
 2º Se encarga de balancear la carga del servicio interno noticias tanto tanto para el servicio email1 como para el servicio email2, tambien ofrece tolerancia a fallos. 
+
 3º Como ultima funcion, el balanceador del servicio web es capaz de redirigir el trafico a la base de datos (tenemos 2 base datos, una maestro y otra esclavo) maestro comunica
+
 a a la BBDD todo los cambios de tablas. De esta manera siempre existe una coherancia en todo momento en las tablas.
 En caso de que se caiga la BBDD maestro se redirige el trafico a la BDD esclavo. Todo esta emulado en maquinas virtuales independientes
 
