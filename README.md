@@ -135,4 +135,4 @@ PRE: Poner en pom.xml empaquetado con jar y añadir dos dependencias de com.sun.
 
 # UML
 
-<img src="/diagramaclases.jpg?raw=true"></img>
+<img src="PracticaFase1.2/PracticaFase1.2//diagramaclases.jpg?raw=true"></img>
