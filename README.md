@@ -24,6 +24,9 @@ Cada uno de los servicios webs tiene instalado un balanceador y cumple con 3 fun
 a a la BBDD todo los cambios de tablas. De esta manera siempre existe una coherancia en todo momento en las tablas.
 En caso de que se caiga la BBDD maestro se redirige el trafico a la BDD esclavo. Todo esta emulado en maquinas virtuales independientes
 
+# UML
+<img src="PracticaFase1.2/imagenesREADME/diagramaclases.jpg?raw=true"></img>
+
 # Video
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qUx7hZ05KDs/0.jpg)](https://www.youtube.com/watch?v=qUx7hZ05KDs) 
